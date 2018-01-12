@@ -2,6 +2,7 @@
 <html>
     <head>
         <Title>Preguntas</Title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <h2>Preguntas</h2>
@@ -40,18 +41,33 @@
             <b>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? 
             Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</b> 
             HTML5 no tiene ninguno de los atributos de presentación que se encontraban en HTML4 ya que sus funciones se manejan mejor con CSS. Algunos atributos de HTML4 ya no están permitidos en HTML5 y se han eliminado por completo.
-            Removed Attributes
-            From the Elements
-            rev
-            link, a
-            charset
-            link and a
-            shape
-            a
-            coords
-            a
-            longdesc
-            img and iframe.[4]
+            <table>
+                <tr>
+                    <th>Removed Attributes</th>
+                    <th>From the Elements</th>
+                </tr>
+                <tr>
+                    <td>rev</td>
+                    <td>link, a</td>
+                </tr>
+                <tr>
+                    <td>charset</td>
+                    <td>link, a</td>
+                </tr>
+                <tr>
+                    <td>shape</td>
+                    <td>a</td>
+                </tr>
+                <tr>
+                    <td>coords</td>
+                    <td>a</td>
+                </tr>
+                <tr>
+                    <td>longdesc</td>
+                    <td>img, iframe</td>
+                </tr>
+            </table>
+            [4]
             <br>
             
             <br><br>
@@ -74,16 +90,39 @@
             Use el atributo id para definir de manera única una tabla[5]
             <br><br>
             <b>¿Cuáles son los principales controles de una forma HTML5?</b> 
-            
-Attribute	Description
-accept-charset	Specifies the charset used in the submitted form (default: the page charset).
-action	Specifies an address (url) where to submit the form (default: the submitting page).
-autocomplete	Specifies if the browser should autocomplete the form (default: on).
-enctype	Specifies the encoding of the submitted data (default: is url-encoded).
-method	Specifies the HTTP method used when submitting the form (default: GET).
-name	Specifies a name used to identify the form (for DOM usage: document.forms.name).
-novalidate	Specifies that the browser should not validate the form.
-target	Specifies the target of the address in the action attribute (default: _self).[6]
+            <table>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>accept-charset</td>
+                    <td>Specifies the charset used in the submitted form (default: the page charset).</td>
+                </tr>
+                <tr>
+                    <td>action</td>
+                    <td>Specifies an address (url) where to submit the form (default: the submitting page).</td>
+                </tr>
+                <tr>
+                    <td>autocomplete</td>
+                    <td>Specifies if the browser should autocomplete the form (default: on).
+                    enctype	Specifies the encoding of the submitted data (default: is url-encoded).</td>
+                </tr>
+                <tr>
+                    <td>method</td>
+                    <td>Specifies the HTTP method used when submitting the form (default: GET).</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>Specifies a name used to identify the form (for DOM usage: document.forms.name).</td>
+                </tr>
+                <tr>
+                    <td>novalidate</td>
+                    <td>Specifies that the browser should not validate the form.
+                    target	Specifies the target of the address in the action attribute (default: _self).</td>
+                </tr>
+            </table>
+            [6]
             <br><br>
             <b>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner 
             el navegador que utilizas)</b> 
