@@ -6,78 +6,108 @@
     <body>
         <h2>Preguntas</h2>
         <p>
-            ¿Cuál es la diferencia entre Internet y la World Wide Web?
-El internet es una red de redes. Por el otro lado, WWW es un sistema que usamos para acceder al internet.
-https://computer.howstuffworks.com/internet/basics/internet-versus-world-wide-web1.htm
-¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?
-HEAD: Petición para devolver los headers 
-GET: Recupera información.
-POST: Petición para que el recurso en el URI haga algo con la entidad provista. (Procesa)
-PUT: Guardar una entidad en un URI.
-PATCH: Actualizar campos específicos de una entidad en un URI
-DELETE: Petición para eliminar un recurso.
-https://spring.io/understanding/REST
-¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?
-POST, porque recibe información y la valida.
-¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?
-GET
-Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?
-Que la petición fue exitosa. No, no ocurrió ningún error.
-https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?
-404 significa que no se encontró algún recurso. El desarrollador debe de corregir el error porque significa que el usuario no encontró lo que debía de estar en alguna página.
-¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?
-El error 500 es un error de servidor. El desarrollador no necesariamente puede hacer algo al respecto.
-¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? 
-Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.
-HTML5 no tiene ninguno de los atributos de presentación que se encontraban en HTML4 ya que sus funciones se manejan mejor con CSS. Algunos atributos de HTML4 ya no están permitidos en HTML5 y se han eliminado por completo.
-Removed Attributes
-From the Elements
-rev
-link, a
-charset
-link and a
-shape
-a
-coords
-a
-longdesc
-img and iframe.
-https://www.tutorialspoint.com/html5/html5_deprecated_tags.htm
-¿Cuáles son las diferencias principales entre HTML 4 y HTML5?
-En HTML5 está mejor definido el manejo de errores, tiene mejores características de aplicaciones web, también se mejoró la semántica de los elementos.
-¿Qué componentes de estructura y estilo tiene una tabla?
-table para definir una tabla
-tr para definir una fila de tabla
-td para definir una tabla de datos
-th para definir un encabezado de tabla
-caption para definir un título de tabla
-border CSS para definir un borde
-CSS border-collapse  para contraer las fronteras de las celdas
-CSS padding para agregar relleno a las celdas
-CSS text-align para alinear el texto de la celda
-CSS border-spacing para establecer el espacio entre las celdas
-Use el atributo colspan para hacer que una celda abarque muchas columnas
-Use el atributo rowspan para hacer que una celda abarque muchas filas
-Use el atributo id para definir de manera única una tabla
-https://www.w3schools.com/html/html_tables.asp
-¿Cuáles son los principales controles de una forma HTML5?
-Value
-Description
-default
-Specifies the entire region
-rect
-Defines a rectangular region
-circle
-Defines a circular region
-poly
-Defines a polygonal region
-https://www.w3schools.com/tags/att_area_shape.asp
-¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner 
-el navegador que utilizas)
-Resultados: html5te.st/cb64673b028bb7a7
+            <b>¿Cuál es la diferencia entre Internet y la World Wide Web? </b>El internet es una red de redes. Por el otro lado, WWW es un sistema que usamos para acceder al internet.[1]
+            
+            <br><br>    
+            <b>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</b> 
+            HEAD: Petición para devolver los headers 
+            GET: Recupera información.
+            POST: Petición para que el recurso en el URI haga algo con la entidad provista. (Procesa)
+            PUT: Guardar una entidad en un URI.
+            PATCH: Actualizar campos específicos de una entidad en un URI
+            DELETE: Petición para eliminar un recurso.[2]
 
+            <br><br>
+            <b>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</b>
+            POST, porque recibe información y la valida.
+            <br><br>
+            <b>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</b>
+            GET
+            
+            <br><br>
+            <b>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</b> 
+            Que la petición fue exitosa. No, no ocurrió ningún error.[3]
+            
+            <br><br>
+            <b>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</b> 
+            404 significa que no se encontró algún recurso. El desarrollador debe de corregir el error porque significa que el usuario no encontró lo que debía de estar en alguna página.
+            
+            <br><br>
+            <b>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</b>
+            El error 500 es un error de servidor. El desarrollador no necesariamente puede hacer algo al respecto.
+            
+            <br><br>
+            <b>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? 
+            Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</b> 
+            HTML5 no tiene ninguno de los atributos de presentación que se encontraban en HTML4 ya que sus funciones se manejan mejor con CSS. Algunos atributos de HTML4 ya no están permitidos en HTML5 y se han eliminado por completo.
+            Removed Attributes
+            From the Elements
+            rev
+            link, a
+            charset
+            link and a
+            shape
+            a
+            coords
+            a
+            longdesc
+            img and iframe.[4]
+            <br>
+            
+            <br><br>
+            <b>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</b> 
+            En HTML5 está mejor definido el manejo de errores, tiene mejores características de aplicaciones web, también se mejoró la semántica de los elementos.
+            <br><br>
+            <b>¿Qué componentes de estructura y estilo tiene una tabla?</b> 
+            table para definir una tabla
+            tr para definir una fila de tabla
+            td para definir una tabla de datos
+            th para definir un encabezado de tabla
+            caption para definir un título de tabla
+            border CSS para definir un borde
+            CSS border-collapse  para contraer las fronteras de las celdas
+            CSS padding para agregar relleno a las celdas
+            CSS text-align para alinear el texto de la celda
+            CSS border-spacing para establecer el espacio entre las celdas
+            Use el atributo colspan para hacer que una celda abarque muchas columnas
+            Use el atributo rowspan para hacer que una celda abarque muchas filas
+            Use el atributo id para definir de manera única una tabla[5]
+            <br><br>
+            <b>¿Cuáles son los principales controles de una forma HTML5?</b> 
+            
+Attribute	Description
+accept-charset	Specifies the charset used in the submitted form (default: the page charset).
+action	Specifies an address (url) where to submit the form (default: the submitting page).
+autocomplete	Specifies if the browser should autocomplete the form (default: on).
+enctype	Specifies the encoding of the submitted data (default: is url-encoded).
+method	Specifies the HTTP method used when submitting the form (default: GET).
+name	Specifies a name used to identify the form (for DOM usage: document.forms.name).
+novalidate	Specifies that the browser should not validate the form.
+target	Specifies the target of the address in the action attribute (default: _self).[6]
+            <br><br>
+            <b>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner 
+            el navegador que utilizas)</b> 
+            Resultados con Chrome, 520: <a href="http://html5test.com/s/cb64673b028bb7a7.html">html5te.st/cb64673b028bb7a7</a>
+
+            
         </p>
+        <section>
+            <h2>Referencias</h2>
+            [1]<a href="https://computer.howstuffworks.com/internet/basics/internet-versus-world-wide-web1.htm"> https://computer.howstuffworks.com/internet/basics/internet-versus-world-wide-web1.htm</a>
+            <br>
+            [2]<a href="https://spring.io/understanding/REST">https://spring.io/understanding/REST</a>
+            <br>[3]<a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</a></u>
+            <br>
+            [4]<a href="https://www.tutorialspoint.com/html5/html5_deprecated_tags.htm  ">https://www.tutorialspoint.com/html5/html5_deprecated_tags.htm
+            </a>
+            <br>
+            [5]<a href="https://www.w3schools.com/html/html_tables.asp">https://www.w3schools.com/html/html_tables.asp</a>
+            <br>
+            [6]<a href="https://www.w3schools.com/html/html_forms.asp">https://www.w3schools.com/html/html_forms.asp</a>
+            
+        </section>
+        <br>
         <a href="index.html"> <button type="button">Regresar</button></a>
     </body>
+        
 </html>
