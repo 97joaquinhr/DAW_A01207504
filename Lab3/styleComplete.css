@@ -18,7 +18,7 @@ ul {
     overflow: hidden;
     background-color: #333;
 }
-img{
+#perfil{
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
@@ -56,4 +56,4 @@ footer {
    color: white;
    text-align: center;
 }
-.ignore-css{ float: unset;}
+li.ignore-css{ float: unset;}
