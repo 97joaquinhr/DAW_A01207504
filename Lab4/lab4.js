@@ -97,6 +97,28 @@ document.write("<br><b>Ejercicio 6</b><br>\
                 <p>Problema tipo ACM: <a href=\&quothttps://uva.onlinejudge.org/external/6/679.pdf\&quot>https://uva.onlinejudge.org/external/6/679.pdf</a></p>");
 let t,n,x,cont=0;
 t=prompt("Ejercicio 6\n¿Cuántos casos habrán?");
+var acm=new Object();  
+function case3(n,x){
+    let res=1,i;
+    for(i=0;i<n-1;i++){
+        if(x%2==0){
+            res=res*2+1;
+            x/=2;
+        }
+        else{
+            res=res*2;
+            x=(x+1)/2;
+        }
+    }
+    return res;
+
+}
+function case2(n){
+    let res=Math.pow(2,n)-1;
+    return res;
+}
+acm.c3=case3;
+acm.c2=case2;
 while(t>0){
     alert("Caso "+(cont+1));
     n=prompt("¿Cuál es la profundidad máxima del caso?");
@@ -108,22 +130,12 @@ while(t>0){
         document.write(c);
     }
     else if(x==c){
-        let res=Math.pow(2,n)-1;
+        let res=acm.c2(n);
         alert(res);
         document.write("profundidad: "+n+" pelota numero: "+x+" stop position: "+res+"<br>");
     }
     else{
-        let res=1,i;
-        for(i=0;i<n-1;i++){
-            if(x%2==0){
-                res=res*2+1;
-                x/=2;
-            }
-            else{
-                res=res*2;
-                x=(x+1)/2;
-            }
-        }
+        let res=acm.c3(n,x);
         alert(res);
         document.write("profundidad: "+n+" pelota numero: "+x+" stop position: "+res+"<br>");
     }
