@@ -1,4 +1,4 @@
-<!--January 20, 2018
+<!--January 24, 2018
 Joaquin Herrera Ramos
 A01207504
 DAW
@@ -6,7 +6,7 @@ DAW
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Lab4</title>
+        <title>Lab5</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,12 +30,33 @@ DAW
             <p><b>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</b></p>
             <p>Es una buena práctica porque aunque el servidor puede hacer la validación, lo que pasará es que rechazará la entrada. Se perdería tiempo en esperar que el servidor responda. Todo esto se puede evitar con tan solo validar con Javascript e impedir el <i>submit</i>.</p>
         </article>
-        
         <br>
+        <article>
+            <header><h2>Password Validation</h2></header>
+            <div class="container">
+              <form action="/action_page.php">
+                <label for="usrname">Username</label>
+                <input type="text" id="usrname" name="usrname" required>
+
+                <label for="psw">Password</label>
+                <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+
+                <input type="submit" value="Submit">
+              </form>
+            </div>
+            <div id="message">
+              <h3>Password must contain the following:</h3>
+              <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+              <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+              <p id="number" class="invalid">A <b>number</b></p>
+              <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+            </div>
+        </article>
         <footer>
             <p>Joaquín Herrera Ramos A01207504@itesm.mx, 18/ene/2018.</p>
             <p>Desarrollado con Brackets: <a href="http://brackets.io/">http://brackets.io/</a>.</p> 
         </footer>
+        <script src="lab5.js"></script>
     </body>
     
 </html>
