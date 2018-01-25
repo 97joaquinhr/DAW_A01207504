@@ -14,6 +14,9 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+#shop{
+    background-color: white;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -110,6 +113,9 @@ input[type=submit] {
 /* Add a red text color and an "x" when the requirements are wrong */
 .invalid {
     color: red;
+}
+img{
+    width: 150px;
 }
 
 .invalid:before {
