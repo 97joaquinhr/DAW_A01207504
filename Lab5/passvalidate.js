@@ -3,6 +3,7 @@ var letra = document.getElementById("letra");
 var capital = document.getElementById("capital");
 var number = document.getElementById("number");
 var length = document.getElementById("length");
+var chara = document.getElementById("chara");
 
 // When the user clicks on the password field, show the message box
 myInput.onfocus = function() {
@@ -53,6 +54,15 @@ myInput.onkeyup = function() {
   } else {
     length.classList.remove("valid");
     length.classList.add("invalid");
+  }//agregar caracter raro
+    
+    var chararos=/[!@#$%&*]/g
+    if(myInput.value.match(chararos)) {
+    chara.classList.remove("invalid");
+    chara.classList.add("valid");
+  } else {
+    chara.classList.remove("valid");
+    chara.classList.add("invalid");
   }
 }
-/*Obtuve algunas cosas de W3S*/
+/*Obtuve algunas cosas de W3S y agregue otras*/
