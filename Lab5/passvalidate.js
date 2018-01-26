@@ -1,5 +1,5 @@
 var myInput = document.getElementById("psw");
-var letter = document.getElementById("letter");
+var letra = document.getElementById("letra");
 var capital = document.getElementById("capital");
 var number = document.getElementById("number");
 var length = document.getElementById("length");
@@ -19,11 +19,11 @@ myInput.onkeyup = function() {
   // Validate lowercase letters
   var lowerCaseLetters = /[a-z]/g;//regular expression
   if(myInput.value.match(lowerCaseLetters)) {  
-    letter.classList.remove("invalid");
-    letter.classList.add("valid");
+    letra.classList.remove("invalid");
+    letra.classList.add("valid");
   } else {
-    letter.classList.remove("valid");
-    letter.classList.add("invalid");
+    letra.classList.remove("valid");
+    letra.classList.add("invalid");
   }
   
   // Validate capital letters
@@ -55,3 +55,4 @@ myInput.onkeyup = function() {
     length.classList.add("invalid");
   }
 }
+/*Obtuve algunas cosas de W3S*/
