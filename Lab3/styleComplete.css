@@ -74,7 +74,7 @@ input {
 
 /* Style the submit button */
 input[type=submit] {
-    background-color: #4CAF50;
+    background-color:rgb(226, 158, 6);
     color: white;
 }
 
@@ -122,4 +122,35 @@ img{
     position: relative;
     left: -35px;
     content: "✖";
+}
+#watermark
+{
+    position: absolute;
+    
+}
+#watermarkheader{
+    position:absolute;
+    cursor: move;
+    opacity:0.7;
+    z-index:99;
+    color:#000000;
+    background-color: #bcdbdb;
+    padding: 6px;
+    border: 2px solid;
+    cursor:move;
+    font-size: 20px;
+    bottom:400px;
+    left:250px;
+    width:300px;
+    
+}
+#parent #popup {
+  display: none;
+}
+
+#parent:hover #popup {
+  display: block;
+}
+#popup{
+    color:rgb(226, 158, 6);
 }

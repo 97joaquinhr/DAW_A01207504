@@ -1,0 +1,124 @@
+<!--January 27, 2018
+Joaquin Herrera Ramos
+A01207504
+DAW
+-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Lab6</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../Lab3/style.css">
+        
+    </head>
+    <body>
+        <header><h1>Laboratorio 6<h1></header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </nav>
+        <br>
+        <article>
+            <header><h2>Documentos dinámicos con JavaScript</h2></header>
+            <p><strong>¿Cuáles son las diferencias entre los posibles valores de la propiedad position?</strong></p>
+            <table>
+                <thead>
+                    <th>Value</th>
+                    <th>Description</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>static</td>
+                        <td>Elements renders in order, as they appear in the document flow. This is default.</td>
+                    </tr>
+                    <tr>
+                        <td>absolute</td>
+                        <td>The element is positioned relative to its first positioned (not static) ancestor element</td>
+                    </tr>
+                    <tr>
+                        <td>fixed</td>
+                        <td>The element is positioned relative to the browser window
+                        The element is positioned relative to its normal position, so "left:20" adds 20 pixels to the element's LEFT position</td>
+                    </tr>
+                    <tr>
+                        <td>relative</td>
+                        <td>The element is positioned relative to its normal position, so "left:20" adds 20 pixels to the element's LEFT position</td>
+                    </tr>
+                    <tr>
+                        <td>sticky</td>
+                        <td>The element is positioned based on the user's scroll position</td>
+                    </tr>
+                    <tr>
+                        <td>initial</td>
+                        <td>Sets this property to its default value. Read about initial</td>
+                    </tr>
+                    <tr>
+                        <td>inherit</td>
+                        <td>Inherits this property from its parent element. Read about inherit [1]</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p><strong>¿Cuáles son los valores estándar para la propiedad visibility?</strong></p>
+            <table>
+                <thead>
+                    <th>Value</th>
+                    <th>Description</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>visible</td>
+                        <td>Default value. The element is visible</td>
+                    </tr>
+                    <tr>
+                        <td>hidden</td>
+                        <td>The element is invisible (but still takes up space)</td>
+                    </tr>
+                    <tr>
+                        <td>collapse</td>
+                        <td>Only for table elements. collapse removes a row or column, but it does not affect the table layout. The space taken up by the row or column will be available for other content. If collapse is used on other elements, it renders as "hidden"</td>
+                    </tr>
+                    <tr>
+                        <td>initial</td>
+                        <td>Sets this property to its default value. Read about initial</td>
+                    </tr>
+                    <tr>
+                        <td>inherit</td>
+                        <td>Inherits this property from its parent element. Read about inherit [2]</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>¿Qué es el zIndex y para qué sirve?</strong></p>
+            <p>The z-index property specifies the stack order of an element. An element with greater stack order is always in front of an element with a lower stack order.[3]</p>
+            
+            <h3>Referencias</h3>
+            <p>[1] <a href="https://www.w3schools.com/jsref/prop_style_position.asp">https://www.w3schools.com/jsref/prop_style_position.asp</a></p>
+            <p>[2] <a href="https://www.w3schools.com/cssref/pr_class_visibility.asp">https://www.w3schools.com/cssref/pr_class_visibility.asp</a></p>
+            <p>[3] <a href="https://www.w3schools.com/cssref/pr_pos_z-index.asp">https://www.w3schools.com/cssref/pr_pos_z-index.asp</a></p>
+            <p>[4] <a href="https://www.w3schools.com/howto/howto_js_draggable.asp">https://www.w3schools.com/howto/howto_js_draggable.asp</a></p>
+            
+        </article>
+        <div class="container" id="parent">
+            <header><h2>Ejercicios</h2></header>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a tellus id massa tempus sodales ac rhoncus purus. Nullam vitae faucibus arcu. Praesent quis felis aliquam, facilisis sem id, porta urna. Cras tincidunt condimentum lorem a pharetra. Etiam dapibus a lectus a lacinia. Aenean cursus varius tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed imperdiet ornare dapibus. Ut sed blandit metus. In non pretium lacus.
+                <div id="popup" style="display: none">If you click the parragraph, it changes to italics. After 3 seconds, it returns to normal.</div>
+            </p>
+        </div>
+        <div id="watermark">
+            <div id="watermarkheader">Drag me, I am a watermark [4]</div>
+            <!-- it is draggable-->
+        </div>
+            
+        <br>
+        <footer>
+            <p>Joaquín Herrera Ramos A01207504@itesm.mx, 18/ene/2018.</p>
+            <p>Desarrollado con Brackets: <a href="http://brackets.io/">http://brackets.io/</a>.</p> 
+        </footer>
+        <script src="comportamiento.js"></script>
+    </body>
+    
+</html>
