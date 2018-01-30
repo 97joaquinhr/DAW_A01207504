@@ -1,0 +1,23 @@
+/* general*/
+.container
+{
+    width:90%;
+    max-width: 2000px;
+    margin: 10px auto;
+}
+/*---hero---*/
+.hero{
+    padding:50px;
+    background-color: #F57C00;
+}
+.button.success{
+    background-color: #FFE0B2;
+}
+/*---main---*/
+.main{
+    
+}
+/*---footer---*/
+footer{
+    
+}
