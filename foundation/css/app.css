@@ -1,11 +1,16 @@
-/* general*/
-.container
+@import 'foundation';
+@include foundation-float-grid;
+@include foundation-flex-grid;
+
+@include foundation-xy-grid-classes;
+/*--- general ---*/
+.wrapper
 {
     width:90%;
-    max-width: 2000px;
-    margin: 10px auto;
+    max-width: 12000px;
+    margin: 0px auto;
 }
-/*---hero---*/
+/*--- hero ---*/
 .hero{
     padding:50px;
     background-color: #F57C00;
@@ -13,11 +18,15 @@
 .button.success{
     background-color: #FFE0B2;
 }
-/*---main---*/
-.main{
-    
+.button{
+    color: black;
+    background-color: #FFE0B2;
 }
-/*---footer---*/
+/*--- main ---*/
+.main{
+    padding:20px;
+}
+/*--- footer ---*/
 footer{
     
 }
