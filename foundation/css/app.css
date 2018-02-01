@@ -1,0 +1,43 @@
+@import 'foundation';
+@include foundation-xy-grid-classes;
+/*--- general ---*/
+.wrapper
+{
+    width:90%;
+    max-width: 12000px;
+    margin: 0px auto;
+}
+/*--- nav ---*/
+.top-bar,
+.top-bar ul{
+    background-color:  #BDBDBD;
+}
+.menu, .menu-text{
+    color: #F57C00;
+}
+a{
+    color:#212121;
+}
+/*--- hero ---*/
+.hero{
+    padding:50px 0px;
+    background-color: #F57C00;
+}
+.button{
+    color: black;
+    background-color: #FFE0B2;
+}
+/*--- main ---*/
+.main{
+    padding:50px 0px;
+}
+/*--- footer ---*/
+footer{
+    color:#F57C00;
+    background-color: #212121;
+    padding:50px 0px;
+}
+footer a{
+    display: block;
+    color:#FFE0B2;
+}
