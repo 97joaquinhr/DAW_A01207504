@@ -1,6 +1,4 @@
 @import 'foundation';
-@include foundation-float-grid;
-@include foundation-flex-grid;
 @include foundation-xy-grid-classes;
 /*--- general ---*/
 .wrapper
@@ -14,6 +12,9 @@
 .top-bar ul{
     background-color:  #BDBDBD;
 }
+.menu, .menu-text{
+    color: #F57C00;
+}
 a{
     color:#212121;
 }
@@ -21,9 +22,6 @@ a{
 .hero{
     padding:50px 0px;
     background-color: #F57C00;
-}
-.button.success{
-    background-color: #FFE0B2;
 }
 .button{
     color: black;
@@ -35,7 +33,11 @@ a{
 }
 /*--- footer ---*/
 footer{
-    height: 50px;
+    color:#F57C00;
     background-color: #212121;
-    
+    padding:50px 0px;
+}
+footer a{
+    display: block;
+    color:#FFE0B2;
 }
