@@ -1,0 +1,84 @@
+<?php include("partials/_header.html"); ?>
+<!-- nav bar-->
+        <nav class="top-bar">
+                <div class="top-bar-left">
+                    <ul class="dropdown menu" data-dropdown-menu>
+                        <li class="menu-text">DAW</li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li>
+                            <a>Laboratorios</a>
+                            <ul class="menu vertical">
+                                <li><a href="../Lab1/index.html">Lab1</a></li>
+                                <li><a href="../Lab3/index.html">Lab3</a></li>
+                                <li><a href="../Lab4/index.html">Lab4</a></li>
+                                <li><a href="../Lab5/images/">Lab5</a></li>
+                                <li><a href="../Lab6/index.html">Lab6</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="top-bar-right">
+                    <ul class="menu">
+                      <li><input type="search" placeholder="Search"></li>
+                      <li><button type="button" class="button">Search</button></li>
+                    </ul>
+                </div>                
+        </nav>
+        
+        <!--  hero section  -->
+        <section class="hero">
+            <div class="wrapper">
+                <header><h1>Laboratorio 7</h1></header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <a href="#" class="button">Learn more</a>
+                <a href="#" class="button">Contact</a>
+            </div>
+        </section>
+        
+        <!--  main content  -->
+        <section class="main">
+            <article class="wrapper">
+                <h3>Describe Material design</h3>
+                <p>We challenged ourselves to create a visual language for our users that synthesizes the classic principles of good design with the innovation and possibility of technology and science. This is material design. This spec is a living document that will be updated as we continue to develop the tenets and specifics of material design .</p>
+                <ul><h4>Principles</h4>
+                    <li>Material is the metaphor</li>
+                    <li>Bold, graphic, intentional</li>
+                    <li>Motion provides meaning [1]</li>
+                </ul>
+                <!-- tome el cuestionario de bases de datos para jugar con el contenido con grids y css -->
+                <header><h2>BD vs DBMS</h2></header>
+                <div class="grid-x grid-padding-x">
+                    <div class="small-12 medium-6 cell">
+                        <p><b>¿Qué es entonces una base de datos - DB?</b></p>
+                        <p>Base de datos, también llamada base de datos electrónica, cualquier conjunto de datos o información, que está especialmente organizado para la búsqueda y recuperación rápida por un ordenador. Las bases de datos están estructurados para facilitar el almacenamiento, recuperación, modificación y eliminación de datos en conjunción con diversas operaciones de procesamiento de datos.</p>
+
+                        <p><b>¿En qué casos es conveniente usar bases de datos?</b></p>
+                        <p>Es conveniente usar una base de datos cuando un sistema de información requiera de las capacidades de referencia.
+                        Una base de datos en el sentido estricto proporciona capacidades de referencias cruzadas. El uso de palabras clave y varios comandos de clasificación, los usuarios pueden buscar rápidamente, reorganizar, grupo y seleccione los campos en muchos registros para recuperar o crear informes sobre determinados agregados de datos.
+                        </p>
+                        <p><b>¿Qué es un sistema de gestión de base de datos - DBMS?</b></p>
+                        <p>Sistema de gestión de base de datos (DBMS), Sistema para la búsqueda rápida y la recuperación de información de una base de datos. 
+                        </p>
+                    </div>
+                    <div class="small-12 medium-6 cell">
+                        <p><b>Enlista y explica las funciones/responsabilidades que tienen los DBMS.</b></p>
+                        <p>El DBMS determina cómo se almacenan y recuperan datos. Debe abordar problemas tales como la seguridad, la precisión, la consistencia entre los diferentes registros, el tiempo de respuesta, y los requisitos de memoria.
+                        </p>
+                        <p><b>Ejemplifica y justifica en que proyecto de los que has realizado hubiera sido conveniente utilizar una base de datos.</b></p>
+                        <p>En el proyecto de diseño interactivo, desarrollamos una página web con una lista de restaurantes vegetarianos, sin embargo, no estaba relacionado con nada más. Nos hubiera convenido hacer una base de datos con los restaurantes disponibles dentro de la ciudad de Querétaro para no tener que volver a escribirlos en cada página, sino solo acceder a la base de datos.
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="wrapper">
+                    <header><h3>Referencias</h3></header>
+                    <ul>
+                        <li>[1] <a href="https://material.io/guidelines/">https://material.io/guidelines/</a>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+<?php include("partials/_footer.html"); ?> 
+        
