@@ -1,15 +1,4 @@
-<?php include("partials/_header.html"); 
-    function prom($arr){
-        $suma=0;
-        $contador=0;
-        foreach($arr as $value){
-            $suma+=$value;
-            $contador++;
-        }
-        return $suma/count($arr);
-    }
-
-?>
+<?php include("partials/_header.html"); ?>
        
         <section class="hero">
             <div class="wrapper"><h2>Tabla de potencias de 1 a N</h2></div>

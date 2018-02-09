@@ -53,6 +53,14 @@
                 <br>
                 <input type="submit">
             </form>
+            <form action="invertir.php" method="get" class="wrapper">
+                <header><h3>Inversor de numeros</h3></header>
+                <label for="inv">Números a invertir</label>
+                <input type="number" value=0 name="inv" id="inv">
+                <br>
+                <input type="submit">
+            </form>
+            <!-- ejercicio 5-->
             <article class="wrapper">
                 <header><h3>Preguntas a responder</h3></header>
                 <p><strong>¿Qué hace la función phpinfo()? Describe y discute 3 datos que llamen tu atención.</strong> Outputs a large amount of information about the current state of PHP.[1] </p>
