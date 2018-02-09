@@ -1,84 +1,74 @@
 <?php include("partials/_header.html"); ?>
-<!-- nav bar-->
-        <nav class="top-bar">
-                <div class="top-bar-left">
-                    <ul class="dropdown menu" data-dropdown-menu>
-                        <li class="menu-text">DAW</li>
-                        <li><a href="../index.html">Home</a></li>
-                        <li>
-                            <a>Laboratorios</a>
-                            <ul class="menu vertical">
-                                <li><a href="../Lab1/index.html">Lab1</a></li>
-                                <li><a href="../Lab3/index.html">Lab3</a></li>
-                                <li><a href="../Lab4/index.html">Lab4</a></li>
-                                <li><a href="../Lab5/images/">Lab5</a></li>
-                                <li><a href="../Lab6/index.html">Lab6</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="top-bar-right">
-                    <ul class="menu">
-                      <li><input type="search" placeholder="Search"></li>
-                      <li><button type="button" class="button">Search</button></li>
-                    </ul>
-                </div>                
-        </nav>
         
-        <!--  hero section  -->
         <section class="hero">
             <div class="wrapper">
-                <header><h1>Laboratorio 7</h1></header>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <a href="#" class="button">Learn more</a>
-                <a href="#" class="button">Contact</a>
-            </div>
+                <header><h1>Laboratorio 9 Problemas</h1></header>
+                </div>
         </section>
-        
-        <!--  main content  -->
         <section class="main">
+            <form action= "arreglo.php" method="get" class="wrapper">
+                <header><h3>Arreglo</h3></header>
+                <label for="n1">Número 1</label>
+                <input type="number" name="n1" id="n1" value=0>
+                <br>
+                <label for="n2">Número 2</label>
+                <input type="number" name="n2" id="n2" value=0>
+                <br>
+                <label for="n3">Número 3</label>
+                <input type="number" name="n3" id="n3" value=0>
+                <br>
+                <label for="n4">Número 4</label>
+                <input type="number" name="n4" id="n4" value=0>
+                <br>
+                <label for="n5">Número 5</label>
+                <input type="number" name="n5" id="n5" value=0>
+                <br>
+                <label for="n6">Número 6</label>
+                <input type="number" name="n6" id="n6" value=0>
+                <br>
+                <label for="n7">Número 7</label>
+                <input type="number" name="n7" id="n7" value=0>
+                <br>
+                <label for="n8">Número 8</label>
+                <input type="number" name="n8" id="n8" value=0>
+                <br>
+                <label for="n9">Número 9</label>
+                <input type="number" name="n9" id="n9" value=0>
+                <br>
+                <label for="n10">Número 10</label>
+                <input type="number" name="n10" id="n10" value=0>
+                <br>
+                <label for="probl">Problema a resolver</label>
+                <select name="probl">
+                    <option value="probl1">Problema 1</option>
+                    <option value="probl2">Problema 2</option>
+                    <option value="probl3">Problema 3</option>
+                </select>
+                <input type="submit">
+            </form>
+            <form action="potencias.php" method="get" class="wrapper">
+                <header><h3>Cuadrados y cubos</h3></header>
+                <label for="pot">Números a tabular</label>
+                <input type="number" value=0 name="pot" id="pot">
+                <br>
+                <input type="submit">
+            </form>
             <article class="wrapper">
-                <h3>Describe Material design</h3>
-                <p>We challenged ourselves to create a visual language for our users that synthesizes the classic principles of good design with the innovation and possibility of technology and science. This is material design. This spec is a living document that will be updated as we continue to develop the tenets and specifics of material design .</p>
-                <ul><h4>Principles</h4>
-                    <li>Material is the metaphor</li>
-                    <li>Bold, graphic, intentional</li>
-                    <li>Motion provides meaning [1]</li>
-                </ul>
-                <!-- tome el cuestionario de bases de datos para jugar con el contenido con grids y css -->
-                <header><h2>BD vs DBMS</h2></header>
-                <div class="grid-x grid-padding-x">
-                    <div class="small-12 medium-6 cell">
-                        <p><b>¿Qué es entonces una base de datos - DB?</b></p>
-                        <p>Base de datos, también llamada base de datos electrónica, cualquier conjunto de datos o información, que está especialmente organizado para la búsqueda y recuperación rápida por un ordenador. Las bases de datos están estructurados para facilitar el almacenamiento, recuperación, modificación y eliminación de datos en conjunción con diversas operaciones de procesamiento de datos.</p>
-
-                        <p><b>¿En qué casos es conveniente usar bases de datos?</b></p>
-                        <p>Es conveniente usar una base de datos cuando un sistema de información requiera de las capacidades de referencia.
-                        Una base de datos en el sentido estricto proporciona capacidades de referencias cruzadas. El uso de palabras clave y varios comandos de clasificación, los usuarios pueden buscar rápidamente, reorganizar, grupo y seleccione los campos en muchos registros para recuperar o crear informes sobre determinados agregados de datos.
-                        </p>
-                        <p><b>¿Qué es un sistema de gestión de base de datos - DBMS?</b></p>
-                        <p>Sistema de gestión de base de datos (DBMS), Sistema para la búsqueda rápida y la recuperación de información de una base de datos. 
-                        </p>
-                    </div>
-                    <div class="small-12 medium-6 cell">
-                        <p><b>Enlista y explica las funciones/responsabilidades que tienen los DBMS.</b></p>
-                        <p>El DBMS determina cómo se almacenan y recuperan datos. Debe abordar problemas tales como la seguridad, la precisión, la consistencia entre los diferentes registros, el tiempo de respuesta, y los requisitos de memoria.
-                        </p>
-                        <p><b>Ejemplifica y justifica en que proyecto de los que has realizado hubiera sido conveniente utilizar una base de datos.</b></p>
-                        <p>En el proyecto de diseño interactivo, desarrollamos una página web con una lista de restaurantes vegetarianos, sin embargo, no estaba relacionado con nada más. Nos hubiera convenido hacer una base de datos con los restaurantes disponibles dentro de la ciudad de Querétaro para no tener que volver a escribirlos en cada página, sino solo acceder a la base de datos.
-                        </p>
-                    </div>
-                </div>
+                <header><h3>Preguntas a responder</h3></header>
+                <p><strong>¿Qué hace la función phpinfo()? Describe y discute 3 datos que llamen tu atención.</strong> Outputs a large amount of information about the current state of PHP. This includes information about PHP compilation options and extensions, the PHP version, server information and environment (if compiled as a module), the PHP environment, OS version information, paths, master and local values of configuration options, HTTP headers, and the PHP License.[1]</p>
+            
+                <p><strong>¿Qué cambios tendrías que hacer en la configuración del servidor para que pudiera ser apto en un ambiente de producción?</strong> Cambiar el archivo php.ini-development por php.ini-production, para que inicie con la configuración de ambiente producción.[4]</p>
+                
+                <p><strong>¿Cómo es que si el código está en un archivo con código html que se despliega del lado del cliente, se ejecuta del lado del servidor? Explica.</strong> Se ejecuta un archivo php que devuelve un archivo html para que lo visualice el cliente. </p>
             </article>
-            <article>
-                <div class="wrapper">
-                    <header><h3>Referencias</h3></header>
-                    <ul>
-                        <li>[1] <a href="https://material.io/guidelines/">https://material.io/guidelines/</a>
-                        </li>
-                    </ul>
-                </div>
+             <article class="wrapper">
+                <header><h3>Referencias</h3></header>
+                <ol>
+                    <li> http://php.net/manual/en/function.phpinfo.php</li>
+                    <li> http://php.net/manual/en/function.ini-get.php</li>
+                    <li> http://php.net/manual/en/function.get-loaded-extensions.php</li>
+                    <li> http://php.net/manual/en/migration53.ini.php</li>
+                </ol>
             </article>
         </section>
 <?php include("partials/_footer.html"); ?> 
-        

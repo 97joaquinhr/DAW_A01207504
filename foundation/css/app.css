@@ -4,8 +4,8 @@
 .wrapper
 {
     width:90%;
-    max-width: 12000px;
     margin: 0px auto;
+    padding: 10px 10px;
 }
 /*--- nav ---*/
 .top-bar,
