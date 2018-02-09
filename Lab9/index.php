@@ -55,9 +55,14 @@
             </form>
             <article class="wrapper">
                 <header><h3>Preguntas a responder</h3></header>
-                <p><strong>¿Qué hace la función phpinfo()? Describe y discute 3 datos que llamen tu atención.</strong> Outputs a large amount of information about the current state of PHP. This includes information about PHP compilation options and extensions, the PHP version, server information and environment (if compiled as a module), the PHP environment, OS version information, paths, master and local values of configuration options, HTTP headers, and the PHP License.[1]</p>
+                <p><strong>¿Qué hace la función phpinfo()? Describe y discute 3 datos que llamen tu atención.</strong> Outputs a large amount of information about the current state of PHP.[1] </p>
+                <ul>
+                    <li>PHP version: phpversion()</li>
+                    <li>Server information and environment en INFO_VARIABLES</li>
+                    <li>OS version information</li>
+                </ul>
             
-                <p><strong>¿Qué cambios tendrías que hacer en la configuración del servidor para que pudiera ser apto en un ambiente de producción?</strong> Cambiar el archivo php.ini-development por php.ini-production, para que inicie con la configuración de ambiente producción.[4]</p>
+                <p><strong>¿Qué cambios tendrías que hacer en la configuración del servidor para que pudiera ser apto en un ambiente de producción?</strong> Cambiar el archivo php.ini-development por php.ini-production, para que inicie con la configuración de ambiente producción.[2]</p>
                 
                 <p><strong>¿Cómo es que si el código está en un archivo con código html que se despliega del lado del cliente, se ejecuta del lado del servidor? Explica.</strong> Se ejecuta un archivo php que devuelve un archivo html para que lo visualice el cliente. </p>
             </article>
@@ -65,8 +70,6 @@
                 <header><h3>Referencias</h3></header>
                 <ol>
                     <li> http://php.net/manual/en/function.phpinfo.php</li>
-                    <li> http://php.net/manual/en/function.ini-get.php</li>
-                    <li> http://php.net/manual/en/function.get-loaded-extensions.php</li>
                     <li> http://php.net/manual/en/migration53.ini.php</li>
                 </ol>
             </article>
