@@ -7,8 +7,9 @@
         </section>
         <section class="main">
             <div class="wrapper">
+                <p>El usuario correcto es: usuario<br>La contraseña correcta es: Password1!</p>
                 <div class="container">
-                    <form action="/action_page.php">
+                    <form action="login.php" method="post">
                         <label for="usrname">Usuario</label>
                         <input type="text" id="usrname" name="usrname" required>
 
