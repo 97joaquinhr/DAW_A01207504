@@ -1,0 +1,33 @@
+Revisa el contenido de la tabla materiales y determina si existe alguna inconsistencia en el contenido de la tabla. ¿Cuál es? ¿A qué se debe?
+No encontré inconsistencia. Lo único es que no hay llave primaria.
+
+¿Qué ocurrió? 
+Violation of PRIMARY KEY constraint 'llaveMateriales'. Cannot insert duplicate key in object 'a1207504.Materiales'. The duplicate key value is (1000).
+
+¿Qué información muestra esta consulta? 
+Primary key es clustered
+
+¿Qué sentencias utilizaste para definir las llaves primarias? 
+ALTER TABLE Proyectos add constraint llaveProyectos PRIMARY KEY (Numero) 
+ALTER TABLE Proveedores add constraint llaveProveedores PRIMARY KEY (RFC) 
+
+¿Qué sentencias utilizaste para definir este constrait? 
+ALTER TABLE Entregan add constraint llaveEntregan PRIMARY KEY (Clave,RFC,Numero)
+
+¿Qué particularidad observas en los valores para clave, rfc y numero? 
+Que no tienen ningun formato especial ni cumplen por ejempolo con los 13 caracteres de rfc
+¿Cómo responde el sistema a la inserción de este registro?
+Bien, se inserta pero no se validan los valores
+
+
+¿Qué significa el mensaje que emite el sistema? 
+¿Qué significado tiene la sentencia anterior? 
+The INSERT statement conflicted with the FOREIGN KEY constraint "cfentreganclave". The conflict occurred in database "a1207504", table "a1207504.Materiales", column 'Clave'.
+El statement tuvo un conflicto porque la llave no existe en materiales.
+
+¿Qué significan las columnas de esas consultas?
+Signfican las llaves y contraints existentes en esa tabla.
+
+
+
+
