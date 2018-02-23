@@ -6,11 +6,31 @@
                 </div>
         </section>
         <section class="main">
+            <div class="wrapper">
+                <div class="container">
+                    <form action="/action_page.php">
+                        <label for="usrname">Usuario</label>
+                        <input type="text" id="usrname" name="usrname" required>
+
+                        <label for="psw">Contraseña</label>
+                        <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div id="message">
+                    <h3>La contraseña debe contener lo siguiente</h3>
+                    <p id="letra" class="invalid">Una <strong>minúscula</strong></p>
+                    <p id="capital" class="invalid">Una <strong>mayúscula</strong> </p>
+                    <p id="number" class="invalid">Un <strong>número</strong></p>
+                    <p id="length" class="invalid">Mínimo <strong>8 caracteres</strong></p>
+                    <p id="chara" class="invalid">Mínimo <strong>1 caracter raro</strong></p>
+
+
+                </div>
+            </div>
             <article class="wrapper">
-                
-
-
-
+    
                 <header><h3>Preguntas a responder</h3></header>
                 <p><strong>¿Por qué es una buena práctica separar el controlador de la vista?</strong> Debido a que es un patrón de diseño de software verdaderamente probado que convierte una aplicación en un paquete modular fácil de mantener y mejora la rapidez del desarrollo. La separación de las tareas de tu aplicación en modelos, vistas y controladores hace que su aplicación sea además muy ligeras de entender. Las nuevas características se añaden fácilmente y agregar cosas nuevas a código viejo se hace muy sencillo. El diseño modular también permite a los desarrolladores y los diseñadores trabajar simultáneamente, incluyendo la capacidad de hacer prototipos rápidos.[1]</p>
             
@@ -39,4 +59,7 @@
                 </ol>
             </article>
         </section>
-<?php include("../Lab9/partials/_footer.html"); ?> 
+<?php include("../Lab9/partials/_footer.html"); ?>
+
+        <script src="passvalidate.js"></script>
+    
