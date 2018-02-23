@@ -1,7 +1,7 @@
 <?php
  
     include("../Lab9/partials/_header.html");
-    if($_POST["usrname"]/*htmlspecialchars($_POST["usrname"])=="usuario"*/ && htmlspecialchars($_POST["psw"])=="Password1!"){
+    if(htmlspecialchars($_POST["usrname"])=="usuario" && htmlspecialchars($_POST["psw"])=="Password1!"){
         include("Partials/_Success.html");
     }
     else{
