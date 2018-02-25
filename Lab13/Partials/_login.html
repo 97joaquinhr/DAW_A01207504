@@ -6,6 +6,13 @@
         <section class="main">
             <div class="wrapper">
                 <p>El usuario correcto es: usuario<br>La contraseña correcta es: Password1!</p>
+                <div class="card text-white bg-danger"><!--no funciona aun-->
+                  <?php if (isset($_SESSION["error"]) != ""): ?>
+                    <div class="card-body">
+                      <p class="card-text"><?=$_SESSION["error"] ?></p>
+                    </div>
+                  <?php endif; ?>
+                </div>
                 <div class="container">
                     <form action="login.php" method="post">
                         <label for="usrname">Usuario</label>
