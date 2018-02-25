@@ -28,6 +28,16 @@ El statement tuvo un conflicto porque la llave no existe en materiales.
 ¿Qué significan las columnas de esas consultas?
 Signfican las llaves y contraints existentes en esa tabla.
 
+¿Qué uso se le está dando a GETDATE()? 
+Pide la fecha actual.
+¿Tiene sentido el valor del campo de cantidad? 
+No, si no se entregó nada, no tiene sentido registrarlo.
+
+¿Cómo responde el sistema?
+Responde un mensaje de error.
+¿Qué significa el mensaje?
+No permite registrar una cantidad menor o igual a cero.
+
 
 
 
