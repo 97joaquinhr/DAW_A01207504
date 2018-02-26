@@ -1,13 +1,8 @@
-Bienvenido <?=$user?>
-<br>
-<a class="button" href="add.php" role="button">add</a>
-
-<br>
-
-<img src='<?=$_SESSION["ruta_archivo"]?>'><?=$_SESSION["producto"]?> 
-
-
 <div class="wrapper">
+    Bienvenido <?php echo $_SESSION["usrname"] ?>
     <p>Login correcto, felicidades</p>
-    <a  class="button" href="index.php" role="button">Regresar</a>
+    <a  class="button" href="logout.php" role="button">Log out</a>
+    <a class="button" href="add.php" role="button">add</a>
+    <br>
+    <img src='<?=$_SESSION["ruta archivo"]?>'><?php echo $_SESSION["producto"]?> 
 </div>

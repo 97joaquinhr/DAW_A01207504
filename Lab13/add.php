@@ -1,11 +1,11 @@
 <?php
     session_start();
     
-    if(isset($_SESSION["usuario"]) ) {
-        include("partials/_header.html");
-        include("partials/_add_form.html");
-        include("partials/_footer.html"); 
+    if($_SESSION["usrname"] == "usuario" ) {
+        include("../Lab9/partials/_header.html");
+        include("Partials/_upload.html");
+        include("../Lab9/partials/_footer.html"); 
     } else {
-        header("location:index.php");
+        //header("location:index.php");
     }
 ?>
