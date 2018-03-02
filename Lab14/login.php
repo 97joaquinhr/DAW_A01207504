@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once("modelo.php");
+    require_once("util.php");
     include("../Lab9/partials/_header.html");
     if(isset($_SESSION["usrname"])){
         if($_SESSION["usrname"]=="usuario"){
