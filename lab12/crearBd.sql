@@ -117,6 +117,7 @@ ALTER TABLE entregan add constraint cfentreganclave
  ALTER TABLE entregan add constraint cfentregannumero
  foreign key (numero) references proyectos(numero); 
 
+
  sp_helpconstraint proyectos 
 
 INSERT INTO entregan values (1000, 'AAAA800101', 5000, GETDATE(), 0); 

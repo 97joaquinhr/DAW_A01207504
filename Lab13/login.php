@@ -1,7 +1,7 @@
 <?php
     session_start();
     include("../Lab9/partials/_header.html");
-    if($_SESSION["usrname"]=="usuario"){
+    if(isset($_SESSION["usrname"])){
         include("Partials/_Success.html");
     }
     else if(htmlspecialchars($_POST["usrname"])=="usuario" && htmlspecialchars($_POST["psw"])=="Password1!"){
