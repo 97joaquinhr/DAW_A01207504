@@ -1,6 +1,6 @@
 <?php
     function connect() {
-        $mysql = mysqli_connect("localhost","root","","tienda");
+        $mysql = mysqli_connect("localhost","root","","lab14");
                                             //root si estan en windows
         $mysql->set_charset("utf8");
         return $mysql;
