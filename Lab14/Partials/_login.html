@@ -1,0 +1,66 @@
+<section class="hero">
+            <div class="wrapper">
+                <header><h1>Laboratorio 14</h1></header>
+                </div>
+        </section>
+        <section class="main">
+            <div class="wrapper">
+                <p>El usuario correcto es: usuario<br>La contraseña correcta es: Password1!</p>
+                
+                <?php if (isset($_SESSION["error"]) != ""): ?>
+                <div class="callout alert" data-closable>
+                        <h5>Warning</h5>
+                        <p ><?=$_SESSION["error"] ?></p>
+                        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <?php endif; ?>
+                
+                <div class="container">
+                    <form action="login.php" method="post">
+                        <label for="usrname">Usuario</label>
+                        <input type="text" id="usrname" name="usrname" required>
+
+                        <label for="psw">Contraseña</label>
+                        <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div id="message">
+                    <h3>La contraseña debe contener lo siguiente</h3>
+                    <p id="letra" class="invalid">Una <strong>minúscula</strong></p>
+                    <p id="capital" class="invalid">Una <strong>mayúscula</strong> </p>
+                    <p id="number" class="invalid">Un <strong>número</strong></p>
+                    <p id="length" class="invalid">Mínimo <strong>8 caracteres</strong></p>
+                    <p id="chara" class="invalid">Mínimo <strong>1 caracter raro</strong></p>
+
+
+                </div>
+            </div>
+            <article class="wrapper">
+    
+                <header><h3>Preguntas a responder</h3></header>
+                <p><strong>¿Qué es ODBC y para qué es útil?</strong> In computing, Open Database Connectivity (ODBC) is a standard application programming interface (API) for accessing database management systems (DBMS). The designers of ODBC aimed to make it independent of database systems and operating systems. An application written using ODBC can be ported to other platforms, both on the client and server side, with few changes to the data access code.[1]</p>
+            
+                <p><strong>¿Qué es SQL Injection?</strong> SQL injection is a code injection technique that might destroy your database. SQL injection is one of the most common web hacking techniques. SQL injection is the placement of malicious code in SQL statements, via web page input.[2]</p>
+                
+                <p><strong>¿Qué técnicas puedes utilizar para evitar ataques de SQL Injection?</strong> To protect a web site from SQL injection, you can use SQL parameters. SQL parameters are values that are added to an SQL query at execution time, in a controlled manner.[2]<br>Ejemplo:</p>
+                <code>txtUserId = getRequestString("UserId");<br>
+                txtSQL = "SELECT * FROM Users WHERE UserId = @0";<br>
+                db.Execute(txtSQL,txtUserId);</code>
+               
+            </article>
+             <article class="wrapper">
+                <header><h3>Referencias</h3></header>
+                <ol>
+                    <li>https://en.wikipedia.org/wiki/Open_Database_Connectivity</li>
+                    <li>https://www.w3schools.com/sql/sql_injection.asp</li>
+                
+                </ol>
+            </article>
+        </section>
+
+        <script src="passvalidate.js"></script>
+    
