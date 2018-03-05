@@ -1,6 +1,6 @@
 <section class="hero">
             <div class="wrapper">
-                <header><h1>Laboratorio 14</h1></header>
+                <header><h1>Laboratorio 16</h1></header>
                 </div>
         </section>
         <section class="main">
@@ -42,11 +42,11 @@
             <article class="wrapper">
     
                 <header><h3>Preguntas a responder</h3></header>
-                <p><strong>¿Qué es ODBC y para qué es útil?</strong> In computing, Open Database Connectivity (ODBC) is a standard application programming interface (API) for accessing database management systems (DBMS). The designers of ODBC aimed to make it independent of database systems and operating systems. An application written using ODBC can be ported to other platforms, both on the client and server side, with few changes to the data access code.[1]</p>
+                <p><strong>¿Por qué es una buena práctica separar el modelo del controlador?</strong> MVC supports rapid and parallel development. If an MVC model is used to develop any particular web application then it is possible that one programmer can work on the view while the another can work on the controller to create business logic of the web application. Hence this way, the application developed using MVC model can be completed three times faster than applications that are developed using other development pattern.<br>
+                For any web application, user interface tends to change more frequently than even the business rules of the company. It is obvious that you make frequent changes in your web application like changing colors, fonts, screen layouts, and adding new device support for mobile phones or tablets. Moreover, Adding new type of viewsare very easy in MVC pattern because the Model part does not depend on the views part. Therefore, any changes in the Model will not affect the entire architecture.</p>
             
-                <p><strong>¿Qué es SQL Injection?</strong> SQL injection is a code injection technique that might destroy your database. SQL injection is one of the most common web hacking techniques. SQL injection is the placement of malicious code in SQL statements, via web page input.[2]</p>
-                
-                <p><strong>¿Qué técnicas puedes utilizar para evitar ataques de SQL Injection?</strong> To protect a web site from SQL injection, you can use SQL parameters. SQL parameters are values that are added to an SQL query at execution time, in a controlled manner.[2]<br>Ejemplo:</p>
+                <p><strong>¿Qué es SQL injection y cómo se puede prevenir?</strong> SQL injection is a code injection technique that might destroy your database. SQL injection is one of the most common web hacking techniques. SQL injection is the placement of malicious code in SQL statements, via web page input.[2]</p>
+                <p> To protect a web site from SQL injection, you can use SQL parameters. SQL parameters are values that are added to an SQL query at execution time, in a controlled manner.[2]<br>Ejemplo:</p>
                 <code>txtUserId = getRequestString("UserId");<br>
                 txtSQL = "SELECT * FROM Users WHERE UserId = @0";<br>
                 db.Execute(txtSQL,txtUserId);</code>

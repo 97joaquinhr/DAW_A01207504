@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once("util.php");
     if($_SESSION["usrname"]=="usuario"&& $_POST["producto"]!= NULL){
         unset($_SESSION["error_archivo"]);
         $target_dir = "uploads/";
@@ -40,6 +41,7 @@
                 $_SESSION["ruta archivo"]= $target_file;
                 $_SESSION["error_archivo"] = "Si se esta procesando el archivo";
                 $_SESSION["producto"] = $_POST["producto"];
+                crearProducto($_SESSION["producto"], basename($_FILES["fileToUpload"]["name"]));
                 header("location:login.php");
             } else {
                 $_SESSION["error_archivo"]= "Sorry, there was an error uploading your file.";
@@ -48,6 +50,7 @@
         else{
             header("location:add.php");
         }
+        
     }
     else{
         header("location:index.php");

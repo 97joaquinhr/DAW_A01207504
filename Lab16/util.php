@@ -1,6 +1,12 @@
 <?php
     function connect() {
-        $mysql = mysqli_connect("localhost","root","","lab14");
+        $ENV = "dev";
+        if ($ENV == "dev") {
+            $mysql = mysqli_connect("localhost","root","","lab14");
+                                            //root si estan en windows
+        } else  if ($ENV == "prod"){
+            $mysql = mysqli_connect("localhost","root","","lab14");
+        }
                                             //root si estan en windows
         $mysql->set_charset("utf8");
         return $mysql;
@@ -32,6 +38,33 @@
         } 
         return false;
     }
+    function crearProducto($nombre, $imagen) {
+        $db = connect();
+        
+        if ($db != NULL) {
+            
+            // insert command specification 
+            $query='INSERT INTO productos (nombre,imagen) VALUES (?,?)';
+            // Preparing the statement 
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params 
+            if (!$statement->bind_param("ss", $nombre, $imagen)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              } 
+
+            
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;
+        } 
+        return false;
+    }
     function getTable($tabla) {
         $db = connect();
         if ($db != NULL) {
@@ -43,7 +76,7 @@
             $results = $db->query($query);
              // cycle to explode every line of the results
         
-           $html = '<table class="striped">';
+           $html = '<table>';
            $html .= '<thead>';
            $html .= '<tr>';
            $columnas = $results->fetch_fields();
@@ -103,6 +136,18 @@
         }
         return true;
     }
+    function delete_by_name($name){
+        $db = connect();
+        if ($db != NULL) {
+            $sql="Delete from productos where name='$name'";
+            $result=mysqli_query($db,$sql);
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;
+        } 
+        return false;
+        
+    }
     
     function getProductos() {
         $db = connect();
@@ -128,7 +173,8 @@
                                     <img src="uploads/'.$fila["imagen"].'">
                                     <div class="card-section">
                                       <p>Publicado el: '.$fila["created_at"].'.</p>
-                                      <a href="editar.php" class="button" role="button">Editar</a>
+                                      <a href="editar.php" class="button" role="button">Editar</a
+                                      <!--no funciona a href="delete.php" class="button" method="post" role="button">Borrar</a-->
                                     </div>
                                 </div>
                             </div>';
