@@ -249,6 +249,8 @@ Muestra de salida:
 1000	714.0000
 N. renglones: 132
 
+Creación de vistas
+
 Sentencias:
 Create view vista1 (numero) as SELECT Numero FROM Entregan WHERE Numero LIKE '___6'; 
 select * from vista1
@@ -267,4 +269,173 @@ Varilla 4/32
 Varilla 4/32
 N. renglones: 28
 
-//me faltan 3
+Sentencias:
+Create view vista3 as select m.clave, (m.costo+m.porcentajeimpuesto)*e.cantidad as importe
+from entregan e,materiales m
+where e.clave=m.Clave
+select * from vista3
+Muestra de salida:
+1000	16830.0000
+1000	25908.0000
+1000	714.0000
+N. renglones: 132
+
+Sentencias:
+Create view vista4 as SELECT TOP 2 * FROM Proyectos 
+select * from vista4
+Muestra de salida:
+5000	Vamos Mexico
+5001	Aztecón
+N. renglones: 2
+
+Sentencias:
+Create view vista5 as SELECT Clave,RFC,Numero,Fecha,Cantidad 
+FROM Entregan 
+WHERE Numero Between 5000 and 5010;
+select * from vista5  
+Muestra de salida:
+1000	AAAA800101   	5000	1998-07-08 00:00:00.000	165.00
+1010	BBBB800101   	5001	2000-05-03 00:00:00.000	528.00
+N. renglones: 60
+
+Enunciados y consultas
+
+Los materiales (clave y descripción) entregados al proyecto "México sin ti no estamos completos.
+Sentencias:
+select e.clave,descripcion
+from entregan e, materiales m, Proyectos p
+where e.Clave=m.clave and p.Numero=e.Numero
+and p.Denominacion='Mexico sin ti no estamos completos'
+Muestra de salida:
+1030	Varilla 4/33	Mexico sin ti no estamos completos
+1230	Cemento 	Mexico sin ti no estamos completos
+1430	Pintura B1022	Mexico sin ti no estamos completos
+N. renglones: 3
+
+Los materiales (clave y descripción) que han sido proporcionados por el proveedor "Acme tools.
+Sentencias:
+select e.clave,descripcion
+from entregan e, materiales m, Proveedores p
+where e.Clave=m.clave and p.RFC=e.RFC
+and p.RazonSocial='Acme tools'
+Muestra de salida: -
+N. renglones: 0
+
+El RFC de los proveedores que durante el 2000 entregaron en promedio cuando menos 300 materiales. 
+Sentencias:
+set dateformat dmy
+select p.RFC, avg(cantidad) as 'materiales entregados'
+from entregan e, Proveedores p
+where p.RFC=e.RFC and Fecha between '01/01/2000' and '31/12/2000'
+group by p.RFC
+having avg(cantidad)>300
+Muestra de salida:
+BBBB800101   	392.400000
+CCCC800101   	372.000000
+DDDD800101   	314.333333
+N. renglones: 7
+
+El Total entregado por cada material en el año 2000. 
+Sentencias:
+set dateformat dmy
+select m.clave, sum(cantidad) as 'total'
+from entregan e, materiales m
+where e.Clave=m.Clave and Fecha between '01/01/2000' and '31/12/2000'
+group by m.Clave
+Muestra de salida:
+1000	7.00
+1010	1195.00
+1030	295.00
+N. renglones: 22
+
+La Clave del material más vendido durante el 2001. (se recomienda usar una vista intermedia para su solución) 
+Sentencias:
+set dateformat dmy
+select top 1 clave
+from entregan
+where Fecha between '01/01/2001' and '31/12/2001'
+order by cantidad desc
+Muestra de salida:
+1100
+N. renglones: 1
+
+Productos que contienen el patrón 'ub' en su nombre
+Sentencias:
+select m.Descripcion
+from Materiales m
+where Descripcion like '%ub%'
+Muestra de salida:
+Recubrimiento P1001
+Recubrimiento P1010
+Recubrimiento P1019
+N. renglones: 12
+
+
+Denominación y suma del total a pagar para todos los proyectos. 
+Sentencias:
+select p.denominacion, sum((m.Costo+m.Costo*m.PorcentajeImpuesto/100)*cantidad) as 'total a pagar'
+from Entregan e, materiales m, proyectos p
+where m.Clave=e.Clave and p.numero=e.numero
+group by p.Denominacion
+Muestra de salida:
+Ampliación de la carretera a la huasteca	742461.1940000000
+Aztecón	150200.2190000000
+CIT Campeche	161603.0820000000
+N. renglones: 20
+
+Denominación, RFC y RazonSocial de los proveedores que se suministran materiales al proyecto Televisa en acción que no se encuentran apoyando al proyecto Educando en Coahuila. (Solo usando vistas)
+Sentencias:
+create view SoloUsandoVistas as select p.denominacion, pr.RFC, pr.RazonSocial
+from Entregan e, proyectos p, Proveedores pr
+where p.numero=e.numero and pr.RFC=e.RFC and p.Denominacion='Educando en Coahuila'
+select * from SoloUsandoVistas
+Muestra de salida:
+Educando en Coahuila	EEEE800101   	Alvin
+Educando en Coahuila	HHHH800101   	Tubasa
+Educando en Coahuila	HHHH800101   	Tubasa
+Educando en Coahuila	AAAA800101   	La fragua
+N. renglones: 4
+
+Denominación, RFC y RazonSocial de los proveedores que se suministran materiales al proyecto Televisa en acción que no se encuentran apoyando al proyecto Educando en Coahuila. (Sin usar vistas, utiliza not in, in o exists) 
+Sentencias:
+select distinct p.denominacion, pr.RFC, pr.RazonSocial
+from Entregan e, proyectos p, Proveedores pr
+where p.numero=e.numero and pr.RFC=e.RFC 
+and p.Denominacion='Televisa en acción' 
+and pr.RazonSocial not in (select pr.RazonSocial
+from Entregan e, proyectos p, Proveedores pr
+where p.numero=e.numero and pr.RFC=e.RFC 
+and p.Denominacion='Educando en Coahuila')
+Muestra de salida:
+Televisa en acción	CCCC800101   	La Ferre
+Televisa en acción	DDDD800101   	Cecoferre
+N. renglones: 2
+Nota: Usé distinct para no repetir
+
+Costo de los materiales y los Materiales que son entregados al proyecto Televisa en acción cuyos proveedores también suministran materiales al proyecto Educando en Coahuila. 
+Sentencias:
+select m.costo, m.Clave
+from Entregan e, proyectos p, Proveedores pr, materiales m
+where p.numero=e.numero and pr.RFC=e.RFC and m.Clave = e.clave
+and p.Denominacion='Televisa en acción' 
+and pr.RFC in (select pr.RFC
+from Entregan e, proyectos p, Proveedores pr, Materiales m
+where p.numero=e.numero and pr.RFC=e.RFC and m.Clave = e.clave
+and p.Denominacion='Educando en Coahuila')
+Muestra de salida:
+50.00	1080
+34.00	1280
+N. renglones: 2
+
+Nombre del material, cantidad de veces entregados y total del costo de dichas entregas por material de todos los proyectos.
+Sentencias:
+select m.Descripcion, count(cantidad) as 'veces',
+(m.Costo+m.Costo*m.PorcentajeImpuesto/100)*COUNT(cantidad) as 'total'
+from Entregan e, materiales m
+where m.Clave = e.clave
+group by m.Descripcion,m.PorcentajeImpuesto,m.Costo
+Muestra de salida:
+Arena	3	614.88000000
+Block	3	91.98000000
+Cantera amarilla	3	706.14600000
+N. renglones: 44
