@@ -1,0 +1,19 @@
+sp_help materiales
+
+¿Que muestra la instrucción? 
+Reports information about a database object (any object listed in the sys.sysobjects compatibility view), a user-defined data type, or a data type.
+https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-transact-sql
+
+Ejecuta las instrucciones que contiene el archivo crear.sql 
+
+¿Qué efecto tuvo esta acción?
+Creo las cuatro tablas
+
+¿Qué utilidad tiene esta manera de ejecutar los comandos de SQL?
+Puedes hacerlo de manera más rapida y automatizada
+
+¿Qué relación tienen con las tablas de la base de datos? (checa su contenido)
+Tienen las mismas columnas con los datos llenos
+
+¿Qué sucedió?
+Se llenó la tabla de materiales

@@ -139,9 +139,13 @@
     function delete_by_name($name){
         $db = connect();
         if ($db != NULL) {
-            $sql="Delete from productos where name='$name'";
-            $result=mysqli_query($db,$sql);
-            mysqli_free_result($results);
+            $sql='Delete from productos where nombre="'.$name.'"';
+             if ($db->query($sql) === TRUE) {
+                echo "borrado completo";
+            } 
+            else {
+                echo "Error: " . $sql. "<br>" . $db->error;
+            }
             disconnect($db);
             return true;
         } 
@@ -161,11 +165,13 @@
              // cycle to explode every line of the results
             $html = '<div class="grid-container"> 
                         <div class="grid-x grid-padding-x small-up-2 medium-up-3">';
+
            while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
                                                 // Options: MYSQLI_NUM to use only numeric indexes
                                                 // MYSQLI_ASSOC to use only name (string) indexes
                                                 // MYSQLI_BOTH, to use both
-                    $html .= '<div class="cell">
+              
+               $html .= '<div class="cell">
                                 <div class="card">
                                     <div class="card-divider">
                                         '.$fila["nombre"].'
@@ -173,11 +179,16 @@
                                     <img src="uploads/'.$fila["imagen"].'">
                                     <div class="card-section">
                                       <p>Publicado el: '.$fila["created_at"].'.</p>
-                                      <a href="editar.php" class="button" role="button">Editar</a
-                                      <!--no funciona a href="delete.php" class="button" method="post" role="button">Borrar</a-->
+                                      <a href="editar.php" class="button" role="button">Editar</a>   
+                                      
+                                    <form action="delete.php" method="post">
+                                      <input type="hidden" name="nombre" value='.$fila["nombre"].'>
+                                      <input type="submit" value="Borrar">
+                                    </form>
                                     </div>
                                 </div>
                             </div>';
+
             }
             $html .='</div>
                 </div>';
