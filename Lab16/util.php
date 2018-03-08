@@ -148,7 +148,7 @@
             }
             disconnect($db);
             return true;
-        } 
+        }
         return false;
         
     }
@@ -173,19 +173,21 @@
               
                $html .= '<div class="cell">
                                 <div class="card">
-                                    <div class="card-divider">
+                                   <div class="card-divider">
                                         '.$fila["nombre"].'
-                                    </div>
-                                    <img src="uploads/'.$fila["imagen"].'">
-                                    <div class="card-section">
-                                      <p>Publicado el: '.$fila["created_at"].'.</p>
-                                      <a href="editar.php" class="button" role="button">Editar</a>   
-                                      
-                                    <form action="delete.php" method="post">
-                                      <input type="hidden" name="nombre" value='.$fila["nombre"].'>
-                                      <input type="submit" value="Borrar">
-                                    </form>
-                                    </div>
+                                   </div>
+                                   <img src="uploads/'.$fila["imagen"].'">
+                                   <div class="card-section">
+                                        <p>Publicado el: '.$fila["created_at"].'.</p>
+                                        <!-- <form action="editar.php" method="post">
+                                          <input type="hidden" name="nombre" value='.$fila["nombre"].'>
+                                          <input type="submit" value="Editar">
+                                        </form>     --> 
+                                        <form action="delete.php" method="post">
+                                          <input type="hidden" name="nombre" value='.$fila["nombre"].'>
+                                          <input type="submit" value="Borrar">
+                                        </form>
+                                   </div>
                                 </div>
                             </div>';
 
