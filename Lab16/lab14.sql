@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2018 at 09:50 PM
+-- Generation Time: Mar 08, 2018 at 04:50 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -40,9 +40,9 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `imagen`, `created_at`) VALUES
-(1, 'Mountain', 'Mountain.png', '2018-03-02 19:45:46'),
-(2, 'Sax', 'sax.png', '2018-03-02 20:01:30'),
-(3, 'Lobo', 'wolf.jpg', '2018-03-02 20:02:29');
+(3, 'Lobo', 'wolf.jpg', '2018-03-02 20:02:29'),
+(7, 'mountain1', 'Mountain.png', '2018-03-08 03:46:11'),
+(8, 'Saxofon', 'sax.jpg', '2018-03-08 03:47:28');
 
 -- --------------------------------------------------------
 
@@ -74,6 +74,16 @@ INSERT INTO `usuarios` (`id`, `nombre`, `passwd`, `created_at`) VALUES
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `productos`
+--
+ALTER TABLE `productos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
