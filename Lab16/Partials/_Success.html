@@ -3,16 +3,28 @@
     <p>Login correcto, felicidades</p>
     <a  class="button" href="logout.php" role="button">Log out</a>
     <a class="button" href="add.php" role="button">add</a>
+    <a class="button" data-open="editar" role="button">Edit</a>
+
     <br>
     
     <?php getProductos()?>
     <?php getProductosRaw()?>
     
     <img src='<?=$_SESSION["ruta archivo"]?>' alt="Aquí estará tu imagen"><?php echo $_SESSION["producto"]?>
-    <div class="reveal" id="exampleModal1" data-reveal>
-        <h1>Awesome. I Have It.</h1>
-        <p class="lead">Your couch. It is mine.</p>
-        <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+    <div class="reveal" id="editar" data-reveal>
+        <h1>Editar una foto</h1>
+        <p class="lead">Escribe el nombre de la foto a editar y cambia en nombre de la imagen.</p>
+        <form action="editar.php" method="post" enctype="multipart/form-data">
+            <label for="producto">
+                Nombre del producto
+                <input id="producto" type="text" name="producto" placeholder="ejemplo1">
+            </label>
+            <label for="image">
+                Nombre de imagen
+                <input type="text" name="image" id="image">
+                <input type="submit" value="Save changes" name="submit" placeholder="ejemplo1.jpg">
+            </label>
+        </form>
         <button class="close-button" data-close aria-label="Close modal" type="button">
             <span aria-hidden="true">&times;</span>
         </button>

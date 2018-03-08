@@ -65,6 +65,22 @@
         } 
         return false;
     }
+    function update_by_name($name,$image){
+        $db = connect();
+        if ($db != NULL) {
+            $sql="Update productos set nombre='".$name."',imagen='".$image."' where nombre='".$name."'";
+            if ($db->query($sql) === TRUE) {
+                echo "editado completo";
+            }
+            else {
+                echo "Error: " . $sql. "<br>" . $db->error;
+            }
+            disconnect($db);
+            return true;
+        }
+        return false;
+
+    }
     function getTable($tabla) {
         $db = connect();
         if ($db != NULL) {
@@ -179,7 +195,7 @@
                                    <img src="uploads/'.$fila["imagen"].'">
                                    <div class="card-section">
                                         <p>Publicado el: '.$fila["created_at"].'.</p>
-                                        <!-- <form action="editar.php" method="post">
+                                        <!-- <form action="Veditar.php" method="post">
                                           <input type="hidden" name="nombre" value='.$fila["nombre"].'>
                                           <input type="submit" value="Editar">
                                         </form>     --> 

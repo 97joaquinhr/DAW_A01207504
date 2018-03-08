@@ -128,7 +128,7 @@
                                     <img src="uploads/'.$fila["imagen"].'">
                                     <div class="card-section">
                                       <p>Publicado el: '.$fila["created_at"].'.</p>
-                                      <a href="editar.php" class="button" role="button">Editar</a>
+                                      <a href="Veditar.php" class="button" role="button">Editar</a>
                                     </div>
                                 </div>
                             </div>';

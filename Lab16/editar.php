@@ -1,9 +1,9 @@
 <?php
 session_start();
-$name=$_POST["nombre"];
-
 require_once("util.php");
-if(delete_by_name($name)){
+$name=$_POST["producto"];
+$image=$_POST["image"];
+if(update_by_name($name,$image)){
     header ("location:login.php");
 }else{
     echo 'error';
