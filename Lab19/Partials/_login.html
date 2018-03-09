@@ -1,0 +1,124 @@
+<section class="hero">
+            <div class="wrapper">
+                <header><h1>Laboratorio 19</h1></header>
+                </div>
+        </section>
+        <section class="main">
+            <div class="wrapper">
+                <p>El usuario correcto es: usuario<br>La contraseña correcta es: Password1!</p>
+                
+                <?php if (isset($_SESSION["error"]) != ""): ?>
+                <div class="callout alert" data-closable>
+                        <h5>Warning</h5>
+                        <p ><?=$_SESSION["error"] ?></p>
+                        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <?php endif; ?>
+                
+                <div class="container">
+                    <form action="login.php" method="post">
+                        <label for="usrname">Usuario</label>
+                        <input type="text" id="usrname" name="usrname" required>
+
+                        <label for="psw">Contraseña</label>
+                        <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div id="message">
+                    <h3>La contraseña debe contener lo siguiente</h3>
+                    <p id="letra" class="invalid">Una <strong>minúscula</strong></p>
+                    <p id="capital" class="invalid">Una <strong>mayúscula</strong> </p>
+                    <p id="number" class="invalid">Un <strong>número</strong></p>
+                    <p id="length" class="invalid">Mínimo <strong>8 caracteres</strong></p>
+                    <p id="chara" class="invalid">Mínimo <strong>1 caracter raro</strong></p>
+
+
+                </div>
+            </div>
+            <article class="wrapper">
+
+                <header><h3>Preguntas a responder</h3></header>
+                <p>
+                    <strong>
+                        ¿Qué importancia tiene AJAX en el desarrollo de
+                        RIA's (Rich Internet Applications?
+                    </strong>
+                    AJAX is a developer's dream, because you can:
+
+                    <ul>
+                        <li>Read data from a web server - after the page has loaded</li>
+                        <li>Update a web page without reloading the page</li>
+                        <li>Send data to a web server - in the background [1]</li>
+                    </ul>
+                </p>
+                <p>
+                    <strong>
+                        ¿Qué implicaciones de seguridad
+                        tiene AJAX? ¿Dónde se deben
+                        hacer las validaciones de seguridad,
+                        del lado del cliente o del
+                        lado del servidor?
+                    </strong>
+                    <br><br>
+                    <strong>AJAX Security: Server Side</strong>
+
+                    <ul>
+                        <li>AJAX-based Web applications use the same server-side security schemes of regular Web
+                            applications.
+                        </li>
+
+                        <li>You specify authentication, authorization, and data protection requirements in your web.xml file
+                            (declarative) or in your program (programmatic).
+                        </li>
+
+                        <li>AJAX-based Web applications are subject to the same security threats as regular Web
+                            applications.
+                        </li>
+
+
+                    </ul>
+                    <strong>AJAX Security: Client</strong>
+                    <ul>
+                        <li>JavaScript code is visible to a user/hacker. Hacker can use JavaScript code for inferring
+                            server-side weaknesses.
+                        </li>
+
+                        <li>JavaScript code is downloaded from the server and executed ("eval") at the client and can
+                            compromise the client by mal-intended code.
+                        </li>
+
+                        <li>Downloaded JavaScript code is constrained by the sand-box security model and can be relaxed for
+                            signed JavaScript.
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    <strong>
+                        ¿Qué es JSON?
+                    </strong>
+                    <br>
+                    When exchanging data between a browser and a server, the data can only be text.
+                    JSON is text, and we can convert any JavaScript object into JSON, and send JSON to the server.
+                    We can also convert any JSON received from the server into JavaScript objects.
+                    This way we can work with the data as JavaScript objects, with no complicated parsing and
+                    translations.
+                </p>
+
+            </article>
+             <article class="wrapper">
+                <header><h3>Referencias</h3></header>
+                <ol>
+                    <li>https://www.w3schools.com/js/js_ajax_intro.asp</li>
+                    <li>https://www.w3schools.com/js/js_json_intro.asp</li>
+
+                
+                </ol>
+            </article>
+        </section>
+
+        <script src="passvalidate.js"></script>
+    
