@@ -17,16 +17,19 @@
         <form action="editar.php" method="post" enctype="multipart/form-data">
             <label for="producto">
                 Nombre del producto
-                <input id="producto" type="text" name="producto" placeholder="ejemplo1">
+                <input id="producto" type="text" onkeyup="sendRequest()" name="producto" placeholder="ejemplo1">
             </label>
+            <div id="ajaxResponse"></div>
             <label for="image">
                 Nombre de imagen
                 <input type="text" name="image" id="image">
                 <input type="submit" value="Save changes" name="submit" placeholder="ejemplo1.jpg">
             </label>
         </form>
+
         <button class="close-button" data-close aria-label="Close modal" type="button">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
 </div>
+<script type="text/javascript" src="js/ajax.js"></script>

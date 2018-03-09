@@ -219,6 +219,27 @@
         }
         return true;
     }
+    function getNombres() {
+        $db = connect();
+        if ($db != NULL) {
+
+            //Specification of the SQL query
+            $query='SELECT nombre from productos';
+            $query;
+            // Query execution; returns identifier of the result group
+            $results = $db->query($query);
+            $nombres= array();
+            // cycle to explode every line of the results
+            while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+                $nombres[] = $fila['nombre'];
+            }
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return $nombres;
+        }
+        return false;
+    }
         
     
     //var_dump(login('lalo', 'hockey'));
