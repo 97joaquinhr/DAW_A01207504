@@ -1,0 +1,193 @@
+Laboratorio 21: Manipulación de datos usando Stored Procedures
+
+¿Qué hace el primer bloque del código (bloque del IF)? 
+Se asegura de que no exista ya el procedure llamado crearMaterial.
+Si existe, se hace un drop procedure.
+
+¿Para qué sirve la instrucción GO? 
+GO signals the end of a batch of Transact-SQL statements to the SQL Server utilities.
+
+¿Explica que recibe como parámetro este Procedimiento y qué tabla modifica?
+Se reciben los atributos de la tabla materiales. Clave, descripcion,costo e impuesto.
+Se modifica la tabla materiales.
+
+modificaMaterial
+IF EXISTS (SELECT name FROM sysobjects 
+                       WHERE name = 'modificaMaterial' AND type = 'P')
+                DROP PROCEDURE modificaMaterial
+            GO
+            
+            CREATE PROCEDURE modificaMaterial
+                @uclave NUMERIC(5,0),
+                @udescripcion VARCHAR(50),
+                @ucosto NUMERIC(8,2),
+                @uimpuesto NUMERIC(6,2)
+            AS
+				update materiales set 				Clave=@uclave,Descripcion=@udescripcion,
+				Costo=@ucosto,PorcentajeImpuesto=@uimpuesto
+				where Clave=@uclave
+            GO
+
+eliminaMaterial
+IF EXISTS (SELECT name FROM sysobjects 
+                       WHERE name = 'eliminaMaterial' AND type = 'P')
+                DROP PROCEDURE eliminaMaterial
+            GO
+            
+            CREATE PROCEDURE eliminaMaterial
+                @uclave NUMERIC(5,0)
+            AS
+				delete Materiales
+				where Clave=@uclave
+            GO
+
+
+Crear proyecto
+IF EXISTS (SELECT name FROM sysobjects 
+                       WHERE name = 'creaProyecto' AND type = 'P')
+                DROP PROCEDURE creaProyecto
+            GO
+            
+            CREATE PROCEDURE creaProyecto
+                @unumero NUMERIC(5,0),
+                @udenominacion VARCHAR(50)
+            AS
+                INSERT INTO Proyectos VALUES(@unumero, @udenominacion)
+            GO
+execute creaProyecto 6000,'Bronco y anaya'
+select * from Proyectos
+
+Modificar proyecto
+IF EXISTS (SELECT name FROM sysobjects 
+                       WHERE name = 'modificaProyecto' AND type = 'P')
+                DROP PROCEDURE modificaProyecto
+            GO
+            
+            CREATE PROCEDURE modificaProyecto
+                @unumero NUMERIC(5,0),
+                @udenominacion VARCHAR(50)
+            AS
+				update Proyectos set Numero=@unumero,Denominacion=@udenominacion
+				where Numero=@unumero
+            GO
+execute modificaProyecto 6000,'Elnasd y anaya'
+
+Elimina proyecto
+IF EXISTS (SELECT name FROM sysobjects 
+                       WHERE name = 'eliminaProyecto' AND type = 'P')
+                DROP PROCEDURE eliminaProyecto
+            GO
+            
+            CREATE PROCEDURE eliminaProyecto
+                @unumero NUMERIC(5,0)
+            AS
+				delete Proyectos
+				where Numero=@unumero
+            GO
+execute eliminaProyecto 6000
+
+Crea proveedor
+IF EXISTS (SELECT name FROM sysobjects 
+                       WHERE name = 'creaProveedor' AND type = 'P')
+                DROP PROCEDURE creaProveedor
+            GO
+            
+            CREATE PROCEDURE creaProveedor
+                @urfc char(13),
+                @urazonsocial VARCHAR(50)
+            AS
+                INSERT INTO Proveedores VALUES(@urfc, @urazonsocial)
+            GO
+execute creaProveedor '123456789lqdw','wololo'
+select * from Proveedores
+
+Modifica proveedor
+IF EXISTS (SELECT name FROM sysobjects 
+                       WHERE name = 'modificaProveedor' AND type = 'P')
+                DROP PROCEDURE modificaProveedor
+            GO
+            
+            CREATE PROCEDURE modificaProveedor
+                @urfc char(13),
+                @urazonsocial VARCHAR(50)
+            AS
+				update Proveedores set RFC=@urfc,RazonSocial=@urazonsocial
+				where RFC=@urfc
+            GO
+execute modificaProveedor '123456789lqdw','lololol'
+
+Elimina proveedor
+IF EXISTS (SELECT name FROM sysobjects 
+                       WHERE name = 'eliminaProveedor' AND type = 'P')
+                DROP PROCEDURE eliminaProveedor
+            GO
+            
+            CREATE PROCEDURE eliminaProveedor
+                @urfc char(13)
+            AS
+				delete Proveedores
+				where RFC=@urfc
+            GO
+execute eliminaProveedor '123456789lqdw'
+
+Crear entrega
+IF EXISTS (SELECT name FROM sysobjects 
+                       WHERE name = 'creaEntrega' AND type = 'P')
+                DROP PROCEDURE creaEntrega
+            GO
+            
+            CREATE PROCEDURE creaEntrega
+                @uclave NUMERIC(5,0),
+				@urfc char(13),
+				@unumero NUMERIC(5,0),
+                @ufecha datetime,
+				@ucantidad numeric(8,2)
+            AS
+                INSERT INTO Entregan VALUES(@uclave, @urfc,@unumero,@ufecha,@ucantidad)
+            GO
+execute creaEntrega 5000,'123456789lqdw',6000,'12/12/2008',1000
+select * from entregan
+
+Modificar entrega
+IF EXISTS (SELECT name FROM sysobjects 
+                       WHERE name = 'modificaEntrega' AND type = 'P')
+                DROP PROCEDURE modificaEntrega
+            GO
+            
+            CREATE PROCEDURE modificaEntrega
+                @uclave NUMERIC(5,0),
+				@urfc char(13),
+				@unumero NUMERIC(5,0),
+                @ufecha datetime,
+				@ucantidad numeric(8,2)
+            AS
+                update Entregan set Clave=@uclave,RFC=@urfc,Numero=@unumero,
+				Fecha=@ufecha,Cantidad=@ucantidad
+				where Clave=@uclave and RFC=@urfc and Numero=@unumero
+            GO
+execute modificaEntrega 5000,'123456789lqdw',6000,'12/12/2009',5254
+
+Eliminar entrega
+IF EXISTS (SELECT name FROM sysobjects 
+                       WHERE name = 'eliminaEntrega' AND type = 'P')
+                DROP PROCEDURE eliminaEntrega
+            GO
+            
+            CREATE PROCEDURE eliminaEntrega
+                @uclave NUMERIC(5,0),
+				@urfc char(13),
+				@unumero NUMERIC(5,0)
+            AS
+				delete Entregan
+				where clave=@uclave and RFC=@urfc and Numero=@unumero
+            GO
+
+execute eliminaEntrega 5000,'123456789lqdw',6000
+
+queryMaterial recibe un varchar y un numeric, el primero busca un patrón parecido en descripción y el segundo busca en costos mayores al numeric obtenido.
+Este query funciona como busqueda.
+
+¿Qué ventajas tienen el utilizar Store Procedures en una aplicación cliente-servidor? 
+Cuando son comando muy complejos, conviene encapsularlos en algo sencillo de ejecutar y recordar.
+¿Qué ventajas tiene utilizar SP en un proyecto?
+Cuando hay alguien que le de mantenimiento a la base de datos pero no tiene suficientes conocimientos, puedes encapsular la complejidad para el empleado.
