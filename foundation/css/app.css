@@ -41,6 +41,14 @@ footer a{
     display: block;
     color:#FFE0B2;
 }
+.anim1{
+    background-color:#98bf21;
+    height:100px;
+    width:200px;
+    position:absolute;
+    opacity: 0.5;
+
+}
 input {
     width: 100%;
     padding: 12px;
