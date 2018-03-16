@@ -43,78 +43,24 @@
             <article class="wrapper">
 
                 <header><h3>Preguntas a responder</h3></header>
-                <p>
-                    <strong>
-                        ¿Qué importancia tiene AJAX en el desarrollo de
-                        RIA's (Rich Internet Applications?
-                    </strong>
-                    AJAX is a developer's dream, because you can:
-
-                    <ul>
-                        <li>Read data from a web server - after the page has loaded</li>
-                        <li>Update a web page without reloading the page</li>
-                        <li>Send data to a web server - in the background [1]</li>
-                    </ul>
-                </p>
-                <p>
-                    <strong>
-                        ¿Qué implicaciones de seguridad
-                        tiene AJAX? ¿Dónde se deben
-                        hacer las validaciones de seguridad,
-                        del lado del cliente o del
-                        lado del servidor?
-                    </strong>
-                    <br><br>
-                    <strong>AJAX Security: Server Side</strong>
-
-                    <ul>
-                        <li>AJAX-based Web applications use the same server-side security schemes of regular Web
-                            applications.
-                        </li>
-
-                        <li>You specify authentication, authorization, and data protection requirements in your web.xml file
-                            (declarative) or in your program (programmatic).
-                        </li>
-
-                        <li>AJAX-based Web applications are subject to the same security threats as regular Web
-                            applications.
-                        </li>
-
-
-                    </ul>
-                    <strong>AJAX Security: Client</strong>
-                    <ul>
-                        <li>JavaScript code is visible to a user/hacker. Hacker can use JavaScript code for inferring
-                            server-side weaknesses.
-                        </li>
-
-                        <li>JavaScript code is downloaded from the server and executed ("eval") at the client and can
-                            compromise the client by mal-intended code.
-                        </li>
-
-                        <li>Downloaded JavaScript code is constrained by the sand-box security model and can be relaxed for
-                            signed JavaScript.
-                        </li>
-                    </ul>
-                </p>
-                <p>
-                    <strong>
-                        ¿Qué es JSON?
-                    </strong>
-                    <br>
-                    When exchanging data between a browser and a server, the data can only be text.
-                    JSON is text, and we can convert any JavaScript object into JSON, and send JSON to the server.
-                    We can also convert any JSON received from the server into JavaScript objects.
-                    This way we can work with the data as JavaScript objects, with no complicated parsing and
-                    translations.
-                </p>
-
+                <p><strong>Explica y elabora un diagrama sobre cómo funciona AJAX con jQuery.</strong> [1]</p>
+                <img src="img/diagrama.png" alt="diagrama">
+                <br>
+                <br>
+                <p><strong>¿Qué alternativas a jQuery existen?</strong></p>
+                <ul>
+                    <li>Prototype</li>
+                    <li>Ext</li>
+                    <li>Dojo Toolkit</li>
+                    <li>MooTools</li>
+                    <li>Script.aculo.us [2]</li>
+                </ul>
             </article>
              <article class="wrapper">
                 <header><h3>Referencias</h3></header>
                 <ol>
-                    <li>https://www.w3schools.com/js/js_ajax_intro.asp</li>
-                    <li>https://www.w3schools.com/js/js_json_intro.asp</li>
+                    <li>https://www.w3schools.com/xml/ajax_intro.asp</li>
+                    <li>http://www.jscripters.com/popular-jquery-alternatives</li>
 
                 
                 </ol>

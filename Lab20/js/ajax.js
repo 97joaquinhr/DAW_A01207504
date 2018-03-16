@@ -15,7 +15,7 @@ function getRequestObject() {
 }
 
 function sendRequest(){
-    $jquery=1;
+    $jquery=1;//ya con jquery
     if (jQuery==1){
         $.get('ajax.php',{pattern:document.getElementById('producto')})
             .done(function (data) {
