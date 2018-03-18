@@ -5,7 +5,20 @@ $(document).ready(function(){
     $('.anim1').mouseleave(function(){
         $('.anim1').fadeTo('fast',0.5);
     });
+
 });
+$(document).ready(function () {
+    $('#pruebaB').click(function () {
+        var toAdd = $("input[name=fprueba]").val();
+        $('#mensaje').append("<p>"+toAdd+"</p>");
+    });
+
+});
+
+
+
+
+
 function getRequestObject() {
     // Asynchronous objec created, handles browser DOM differences
 
@@ -27,7 +40,7 @@ function sendRequest(){
     if (jQuery==1){
         $.get('ajax.php',{pattern:document.getElementById('producto')})
             .done(function (data) {
-                var ajaxResponse=document.getElementById('ajaxResponse');
+                var ajaxResponse=document.getE-lementById('ajaxResponse');
                 ajaxResponse.innerHTML=request.responseText;
                 ajaxResponse.style.visibility="visible";
 

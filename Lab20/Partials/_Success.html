@@ -15,10 +15,19 @@
     </div>
 
     <br>
-    
+    <div class="wrapper">
+        <form>
+            <label for="fprueba">Forma de prueba</label>
+            <input type="text" id="fprueba" name="fprueba" value="Escribe algo">
+        </form>
+        <button type="button" class="button" id="pruebaB">Enviar</button><br/>
+        <div id="mensaje"></div>
+    </div>
+
+
     <?php getProductos()?>
     <?php getProductosRaw()?>
-    
+
     <img src='<?=$_SESSION["ruta archivo"]?>' alt="Aquí estará tu imagen"><?php echo $_SESSION["producto"]?>
     <div class="reveal" id="editar" data-reveal>
         <h1>Editar una foto</h1>
