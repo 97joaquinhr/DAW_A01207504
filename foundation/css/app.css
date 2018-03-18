@@ -42,9 +42,12 @@ footer a{
     color:#FFE0B2;
 }
 .anim1{
-    background-color:#98bf21;
+    background-color:#F57C00;
+    font-size: large;
     height:100px;
     width:200px;
+    padding: 32px;
+    margin: 10px;
     position:absolute;
     opacity: 0.5;
 

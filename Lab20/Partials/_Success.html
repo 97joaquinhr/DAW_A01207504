@@ -1,12 +1,17 @@
 <div class="wrapper">
 
-    <a class="button">Start Animation</a>
-    <div class="anim1">Bienvenido</div>
-    Bienvenido <?php echo $_SESSION["usrname"] ?>
-    <p>Login correcto, felicidades</p>
-    <a  class="button" href="logout.php" role="button">Log out</a>
-    <a class="button" href="add.php" role="button">add</a>
-    <a class="button" data-open="editar" role="button">Edit</a>
+    
+    <div class="grid-x">
+        <div class="cell small-6">Bienvenido <?php echo $_SESSION["usrname"] ?>
+        <p>Login correcto, felicidades</p>
+        <a  class="button" href="logout.php" role="button">Log out</a>
+        <a class="button" href="add.php" role="button">add</a>
+        <a class="button" data-open="editar" role="button">Edit</a></div>
+        <div class="cell small-6">
+            <div class="anim1">Hover on me</div>
+        </div>
+
+    </div>
 
     <br>
     
