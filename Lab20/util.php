@@ -38,28 +38,14 @@
         } 
         return false;
     }
-    function crearProducto($nombre, $imagen) {
+    function crearProducto($nombre, $image) {
         $db = connect();
-        
+        //funciona con stored procedure
         if ($db != NULL) {
-            
-            // insert command specification 
-            $query='INSERT INTO productos (nombre,imagen) VALUES (?,?)';
-            // Preparing the statement 
-            if (!($statement = $db->prepare($query))) {
-                die("Preparation failed: (" . $db->errno . ") " . $db->error);
-            }
-            // Binding statement params 
-            if (!$statement->bind_param("ss", $nombre, $imagen)) {
-                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
-            }
-             // Executing the statement
-             if (!$statement->execute()) {
-                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-              } 
 
-            
-            mysqli_free_result($results);
+            if (!$db->query("CALL p('".$nombre."','".$image."')")) {
+                echo "Falló CALL: (" . $db->errno . ") " . $db->error;
+            }
             disconnect($db);
             return true;
         } 
@@ -240,6 +226,7 @@
         }
         return false;
     }
+
         
     
     //var_dump(login('lalo', 'hockey'));

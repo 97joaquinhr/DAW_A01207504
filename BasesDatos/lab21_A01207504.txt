@@ -187,7 +187,18 @@ execute eliminaEntrega 5000,'123456789lqdw',6000
 queryMaterial recibe un varchar y un numeric, el primero busca un patrón parecido en descripción y el segundo busca en costos mayores al numeric obtenido.
 Este query funciona como busqueda.
 
+Store procedure for lab20
+DELIMITER //
+CREATE PROCEDURE p
+(IN nombreN varchar(40),IN imagenN varchar(200))
+BEGIN
+  INSERT INTO productos(nombre,imagen) values(nombreN,imagenN);
+END //
+DELIMITER ;
+
 ¿Qué ventajas tienen el utilizar Store Procedures en una aplicación cliente-servidor? 
 Cuando son comando muy complejos, conviene encapsularlos en algo sencillo de ejecutar y recordar.
 ¿Qué ventajas tiene utilizar SP en un proyecto?
 Cuando hay alguien que le de mantenimiento a la base de datos pero no tiene suficientes conocimientos, puedes encapsular la complejidad para el empleado.
+
+#aun no agrego el sp a mi proyecto, lo haré mañana martes 20 de marzo en la clase que nos darán para trabajar en el proyecto.
