@@ -40,7 +40,7 @@ function sendRequest(){
     if (jQuery==1){
         $.get('ajax.php',{pattern:document.getElementById('producto')})
             .done(function (data) {
-                var ajaxResponse=document.getE-lementById('ajaxResponse');
+                var ajaxResponse=document.getElementById('ajaxResponse');
                 ajaxResponse.innerHTML=request.responseText;
                 ajaxResponse.style.visibility="visible";
 

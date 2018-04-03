@@ -1,0 +1,53 @@
+CREATE PROCEDURE  BEGIN INSERT INTO intento( Intento, Resutlado ) 
+VALUES (
+intentoN,  'SUCCESS'
+
+drop procedure registros;
+
+DELIMITER //
+CREATE PROCEDURE registros()
+BEGIN
+  Select intento, resutlado, hora
+  from intento
+  order by hora desc;
+END //
+DELIMITER ;
+
+drop procedure sysF;
+
+DELIMITER //
+CREATE PROCEDURE sysF()
+BEGIN
+  Select intento, resutlado, hora
+  from intento
+  where resutlado="SYSTEM FAILURE"
+  order by hora desc;
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE NF()
+BEGIN
+  Select count(resutlado)
+  from intento
+  where resutlado="SYSTEM FAILURE";
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE NS()
+BEGIN
+  Select count(resutlado)
+  from intento
+  where resutlado="SUCCESS";
+END //
+DELIMITER ;
+
+ <?php getFails();?>
+ <br>
+<?php getSuccess(); ?>
+ <br>
+<?php getTable(); ?>
+ <br>
+<?php  getSysFail(); ?>
+ <br>
