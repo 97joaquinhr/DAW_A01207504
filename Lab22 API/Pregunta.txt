@@ -1,0 +1,4 @@
+¿Qué ventajas y desventajas tiene la integración de tus aplicaciones web con servicios web desarrollados por terceros?
+Que el servicio web ya está probado por quien está desarrollado.
+Los servicios web están desarrollados por profesionales que se dedican a eso.
+Puede ser también más cómodo porque hay interacción entre servicios comunes.
