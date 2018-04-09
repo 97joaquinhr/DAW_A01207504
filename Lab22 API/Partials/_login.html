@@ -1,0 +1,78 @@
+<!--laboratorio 22-->
+<section class="hero">
+            <div class="wrapper">
+                <header><h1>Laboratorio 22</h1></header>
+                </div>
+        </section>
+        <section class="main">
+            <div class="wrapper">
+                <h3>Prueba API Google Calendar</h3>
+                <p>
+                    El siguiente botón crea un evento en tu calendario.
+                    Usa el servidor del proyecto a modo de prueba.
+                </p>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Crea un evento</h5>
+                        <p class="card-text">El evento se creará con Google Calendar.</p>
+                        <form action="evento.php" method="post">
+                            <label for="titulo">Título del evento</label>
+                            <input type="text" id="titulo" placeholder="Carnita asada">
+                            <label for="lugar">Lugar del evento</label>
+                            <input type="text" id="lugar" placeholder="Magallanes 517, Treviño, 64570 Monterrey, N.L.">
+                            <label for="lugar">Lugar del evento</label>
+                            <input type="text" id="lugar" placeholder="Magallanes 517, Treviño, 64570 Monterrey, N.L.">
+                            <input type="submit" value="Crear evento">
+
+                        </form>
+                    </div>
+                </div>
+
+
+
+                <br>
+                <p>El usuario correcto es: usuario<br>La contraseña correcta es: Password1!</p>
+                
+                <?php if (isset($_SESSION["error"]) != ""): ?>
+                <div class="callout alert" data-closable>
+                        <h5>Warning</h5>
+                        <p ><?=$_SESSION["error"] ?></p>
+                        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <?php endif; ?>
+                
+                <div class="container">
+                    <form action="login.php" method="post">
+                        <label for="usrname">Usuario</label>
+                        <input type="text" id="usrname" name="usrname" required>
+
+                        <label for="psw">Contraseña</label>
+                        <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div id="message">
+                    <h3>La contraseña debe contener lo siguiente</h3>
+                    <p id="letra" class="invalid">Una <strong>minúscula</strong></p>
+                    <p id="capital" class="invalid">Una <strong>mayúscula</strong> </p>
+                    <p id="number" class="invalid">Un <strong>número</strong></p>
+                    <p id="length" class="invalid">Mínimo <strong>8 caracteres</strong></p>
+                    <p id="chara" class="invalid">Mínimo <strong>1 caracter raro</strong></p>
+
+
+                </div>
+            </div>
+            <article class="wrapper">
+                <header><h3>Preguntas a responder</h3></header>
+                <p><strong>¿Qué ventajas y desventajas tiene la integración de tus aplicaciones web con servicios web desarrollados por terceros?</strong>
+                    Que el servicio web ya está probado por quien está desarrollado.
+                    Los servicios web están desarrollados por profesionales que se dedican a eso.
+                    Puede ser también más cómodo porque hay interacción entre servicios comunes.</p>
+            </article>
+        </section>
+
+        <script src="passvalidate.js"></script>
+    

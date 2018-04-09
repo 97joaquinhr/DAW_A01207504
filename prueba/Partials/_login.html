@@ -1,0 +1,71 @@
+<!--laboratorio 20-->
+<section class="hero">
+            <div class="wrapper">
+                <header><h1>Laboratorio 20</h1></header>
+                </div>
+        </section>
+        <section class="main">
+            <div class="wrapper">
+                <p>El usuario correcto es: usuario<br>La contraseña correcta es: Password1!</p>
+                
+                <?php if (isset($_SESSION["error"]) != ""): ?>
+                <div class="callout alert" data-closable>
+                        <h5>Warning</h5>
+                        <p ><?=$_SESSION["error"] ?></p>
+                        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <?php endif; ?>
+                
+                <div class="container">
+                    <form action="login.php" method="post">
+                        <label for="usrname">Usuario</label>
+                        <input type="text" id="usrname" name="usrname" required>
+
+                        <label for="psw">Contraseña</label>
+                        <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div id="message">
+                    <h3>La contraseña debe contener lo siguiente</h3>
+                    <p id="letra" class="invalid">Una <strong>minúscula</strong></p>
+                    <p id="capital" class="invalid">Una <strong>mayúscula</strong> </p>
+                    <p id="number" class="invalid">Un <strong>número</strong></p>
+                    <p id="length" class="invalid">Mínimo <strong>8 caracteres</strong></p>
+                    <p id="chara" class="invalid">Mínimo <strong>1 caracter raro</strong></p>
+
+
+                </div>
+            </div>
+            <article class="wrapper">
+
+                <header><h3>Preguntas a responder</h3></header>
+                <p><strong>Explica y elabora un diagrama sobre cómo funciona AJAX con jQuery.</strong> [1]</p>
+                <img src="img/diagrama.png" alt="diagrama">
+                <br>
+                <br>
+                <p><strong>¿Qué alternativas a jQuery existen?</strong></p>
+                <ul>
+                    <li>Prototype</li>
+                    <li>Ext</li>
+                    <li>Dojo Toolkit</li>
+                    <li>MooTools</li>
+                    <li>Script.aculo.us [2]</li>
+                </ul>
+            </article>
+             <article class="wrapper">
+                <header><h3>Referencias</h3></header>
+                <ol>
+                    <li>https://www.w3schools.com/xml/ajax_intro.asp</li>
+                    <li>http://www.jscripters.com/popular-jquery-alternatives</li>
+
+                
+                </ol>
+            </article>
+        </section>
+
+        <script src="passvalidate.js"></script>
+    
