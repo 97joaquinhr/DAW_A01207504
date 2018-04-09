@@ -1,10 +1,116 @@
+drop table Movimientos
+
 drop table Clientes_Banca
 drop table Tipos_Movimiento
-drop table Movimientos
+
 
 CREATE TABLE Clientes_Banca
 (
-	NoCuenta varchar(5) Not null,
+	NoCuenta varchar(5) Not null Primary key,
 	Nombre varchar(30),
 	Saldo numeric(10,2)
 )
+CREATE TABLE Tipos_Movimiento
+(
+	ClaveM varchar(2) Not null Primary key,
+	Descripcion varchar(30)
+)
+CREATE TABLE Movimientos
+(
+	NoCuenta varchar(5) Foreign key references Clientes_Banca(NoCuenta),
+	ClaveM varchar(2) Foreign key references Tipos_Movimiento(ClaveM),
+	Fecha datetime,
+	Monto numeric(10,2)
+)
+
+BEGIN TRANSACTION PRUEBA1
+INSERT INTO CLIENTES_BANCA VALUES('001', 'Manuel Rios Maldonado', 9000);
+INSERT INTO CLIENTES_BANCA VALUES('002', 'Pablo Perez Ortiz', 5000);
+INSERT INTO CLIENTES_BANCA VALUES('003', 'Luis Flores Alvarado', 8000);
+COMMIT TRANSACTION PRUEBA1
+
+BEGIN TRANSACTION PRUEBA2
+INSERT INTO CLIENTES_BANCA VALUES('004','Ricardo Rios Maldonado',19000); 
+INSERT INTO CLIENTES_BANCA VALUES('005','Pablo Ortiz Arana',15000); 
+INSERT INTO CLIENTES_BANCA VALUES('006','Luis Manuel Alvarado',18000);
+COMMIT TRANSACTION PRUEBA2
+
+SELECT * FROM CLIENTES_BANCA 
+
+ROLLBACK TRANSACTION PRUEBA2 
+
+BEGIN TRANSACTION PRUEBA3
+INSERT INTO TIPOS_MOVIMIENTO VALUES('A','Retiro Cajero Automatico');
+INSERT INTO TIPOS_MOVIMIENTO VALUES('B','Deposito Ventanilla');
+COMMIT TRANSACTION PRUEBA3
+
+BEGIN TRANSACTION PRUEBA4
+INSERT INTO MOVIMIENTOS VALUES('001','A',GETDATE(),500);
+UPDATE CLIENTES_BANCA SET SALDO = SALDO -500
+WHERE NoCuenta='001'
+COMMIT TRANSACTION PRUEBA4
+
+SELECT * FROM Movimientos
+
+BEGIN TRANSACTION PRUEBA5
+INSERT INTO CLIENTES_BANCA VALUES('005','Rosa Ruiz Maldonado',9000);
+INSERT INTO CLIENTES_BANCA VALUES('006','Luis Camino Ortiz',5000);
+INSERT INTO CLIENTES_BANCA VALUES('001','Oscar Perez Alvarado',8000);
+
+
+IF @@ERROR = 0
+COMMIT TRANSACTION PRUEBA5
+ELSE
+BEGIN
+PRINT 'A transaction needs to be rolled back'
+ROLLBACK TRANSACTION PRUEBA5
+END
+
+IF EXISTS (SELECT name FROM sysobjects 
+            WHERE name = 'REGISTRAR_RETIRO_CAJERO' AND type = 'P')
+	DROP PROCEDURE REGISTRAR_RETIRO_CAJERO
+    GO
+            
+CREATE PROCEDURE REGISTRAR_RETIRO_CAJERO
+    @unocuenta varchar(5),
+    @umonto numeric(10,2)
+AS
+	BEGIN TRANSACTION PRUEBA6
+	INSERT INTO MOVIMIENTOS VALUES(@unocuenta,'A',GETDATE(),@umonto);
+	UPDATE CLIENTES_BANCA SET SALDO = SALDO -@umonto
+	WHERE NoCuenta=@unocuenta
+	IF @@ERROR = 0
+	COMMIT TRANSACTION PRUEBA6
+	ELSE
+	BEGIN
+	PRINT 'A transaction needs to be rolled back'
+	ROLLBACK TRANSACTION PRUEBA6
+	END
+GO
+
+IF EXISTS (SELECT name FROM sysobjects 
+            WHERE name = 'REGISTRAR_DEPOSITO_VENTANILLA' AND type = 'P')
+	DROP PROCEDURE REGISTRAR_DEPOSITO_VENTANILLA
+    GO
+
+CREATE PROCEDURE REGISTRAR_DEPOSITO_VENTANILLA
+    @unocuenta varchar(5),
+    @umonto numeric(10,2)
+AS
+	BEGIN TRANSACTION PRUEBA7
+	INSERT INTO MOVIMIENTOS VALUES(@unocuenta,'B',GETDATE(),@umonto);
+	UPDATE CLIENTES_BANCA SET SALDO = SALDO +@umonto
+	WHERE NoCuenta=@unocuenta
+	IF @@ERROR = 0
+	COMMIT TRANSACTION PRUEBA7
+	ELSE
+	BEGIN
+	PRINT 'A transaction needs to be rolled back'
+	ROLLBACK TRANSACTION PRUEBA7
+	END
+GO
+
+select * from Clientes_Banca
+select * from Movimientos
+execute REGISTRAR_RETIRO_CAJERO '001',600
+execute REGISTRAR_DEPOSITO_VENTANILLA '001',600

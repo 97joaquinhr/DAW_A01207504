@@ -7,7 +7,7 @@
  */
 session_start();
 require_once __DIR__ . '/vendor/autoload.php';
-$_SESSION["authCode"] = $_GET['code'];
+$authCode = $_GET['code'];
 if(isset($_GET["error"])){
     header("Location:logout.php");
 }
@@ -21,7 +21,7 @@ $client->setApplicationName(APPLICATION_NAME);
 $client->setScopes(SCOPES);
 $client->setAuthConfig(CLIENT_SECRET_PATH);
 $client->setAccessType('offline');
-$accessToken = $client->fetchAccessTokenWithAuthCode($_SESSION["authCode"]);
+$accessToken = $client->fetchAccessTokenWithAuthCode($authCode);
 
 // Store the credentials to disk.
 if (!file_exists(dirname($_SESSION["credentialPath"]))) {

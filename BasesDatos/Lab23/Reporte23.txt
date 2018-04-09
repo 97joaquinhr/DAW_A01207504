@@ -1,0 +1,24 @@
+SELECT * FROM CLIENTES_BANCA 
+
+¿Que pasa cuando deseas realizar esta consulta? 
+001	Manuel Rios Maldonado	9000.00
+002	Pablo Perez Ortiz	5000.00
+003	Luis Flores Alvarado	8000.00
+
+Revisa el contenido de la tabla clientes_banca desde la ventana que inicializaste como la segunda sesión. 
+
+SELECT * FROM CLIENTES_BANCA 
+¿Qué pasa cuando deseas realizar esta consulta? 
+En la ventana en que ejecuté la transacción sí me permite ver los cambios pero en la que no, no puedo ejecutar el select *.
+Sí permite ejecutar el select con where.
+Esto ocurre porque se bloquea la tabla pero no el campo.
+
+¿Qué ocurrió y por qué?
+Se perdieron los cambios, por el rollback. Ya puedo visualizar la tabla.
+
+¿Para qué sirve el comando @@ERROR revisa la ayuda en línea? 
+Returns the error number for the last Transact-SQL statement executed.
+¿Explica qué hace la transacción? 
+Intenta insetar un NoCuenta que ya existe: '001'
+¿Hubo alguna modificación en la tabla? Explica qué pasó y por qué.
+No, porque se hizo el rollback.
