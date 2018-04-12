@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/Lab22 API/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/Lab22 API/vendor/composer" />
+      <path value="$PROJECT_DIR$/Lab22 API/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/Lab22 API/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/Lab22 API/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/Lab22 API/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/Lab22 API/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/Lab22 API/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/Lab22 API/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/Lab22 API/vendor/google/apiclient-services" />
+      <path value="$PROJECT_DIR$/Lab22 API/vendor/google/auth" />
+      <path value="$PROJECT_DIR$/Lab22 API/vendor/google/apiclient" />
+      <path value="$PROJECT_DIR$/Lab22 API/vendor/phpseclib/phpseclib" />
+    </include_path>
+  </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
 </project>
