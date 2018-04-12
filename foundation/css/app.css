@@ -1,6 +1,9 @@
 @import 'foundation';
 @include foundation-xy-grid-classes;
 /*--- general ---*/
+.prueba{
+    color: #9e7176;
+}
 .wrapper
 {
     width:90%;
