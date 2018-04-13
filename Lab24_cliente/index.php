@@ -13,7 +13,7 @@ if(isset($_SESSION["usrname"])){
 else{
     include("../Lab9/partials/_header.html");
 //    include("Partials/_login.html")
-    $name = "lalo";
+    $name = "joaquin";
     $url = "http://localhost:8080/DAW_A01207504/Lab24_servicio/public/$name"; //Route to the REST web service
     $c = curl_init($url);
     $response = curl_exec($c);
@@ -24,5 +24,6 @@ else{
     curl_close($c);
     echo "<p>Cuando entra a la página, inserta una entrada en la base de datos con CrearProducto() del util.php</p>";
 //var_dump($response);
+    include("Partials/_preguntas.html");
     include("../Lab9/partials/_footer.html");
 }
